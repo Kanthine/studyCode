@@ -1,0 +1,382 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EBDC581028065F9100E77E02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDC580F28065F9100E77E02 /* AppDelegate.swift */; };
+		EBDC581228065F9100E77E02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDC581128065F9100E77E02 /* ViewController.swift */; };
+		EBDC581428065F9200E77E02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBDC581328065F9200E77E02 /* Assets.xcassets */; };
+		EBDC581728065F9200E77E02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBDC581528065F9200E77E02 /* Main.storyboard */; };
+		EBDC582028065FAA00E77E02 /* librtmp.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDC581F28065FAA00E77E02 /* librtmp.1.dylib */; };
+		EBDC5826280660E000E77E02 /* pushStream.c in Sources */ = {isa = PBXBuildFile; fileRef = EBDC5825280660E000E77E02 /* pushStream.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EBDC580C28065F9100E77E02 /* ffPushStream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ffPushStream.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBDC580F28065F9100E77E02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EBDC581128065F9100E77E02 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EBDC581328065F9200E77E02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EBDC581628065F9200E77E02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EBDC581828065F9200E77E02 /* ffPushStream.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ffPushStream.entitlements; sourceTree = "<group>"; };
+		EBDC581F28065FAA00E77E02 /* librtmp.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = librtmp.1.dylib; path = "../../../../usr/local/Cellar/rtmpdump/2.4+20151223_1/lib/librtmp.1.dylib"; sourceTree = "<group>"; };
+		EBDC5823280660E000E77E02 /* ffPushStream-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ffPushStream-Bridging-Header.h"; sourceTree = "<group>"; };
+		EBDC5824280660E000E77E02 /* pushStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pushStream.h; sourceTree = "<group>"; };
+		EBDC5825280660E000E77E02 /* pushStream.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = pushStream.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EBDC580928065F9100E77E02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBDC582028065FAA00E77E02 /* librtmp.1.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EBDC580328065F9100E77E02 = {
+			isa = PBXGroup;
+			children = (
+				EBDC580E28065F9100E77E02 /* ffPushStream */,
+				EBDC580D28065F9100E77E02 /* Products */,
+				EBDC581E28065FAA00E77E02 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EBDC580D28065F9100E77E02 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EBDC580C28065F9100E77E02 /* ffPushStream.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EBDC580E28065F9100E77E02 /* ffPushStream */ = {
+			isa = PBXGroup;
+			children = (
+				EBDC580F28065F9100E77E02 /* AppDelegate.swift */,
+				EBDC581128065F9100E77E02 /* ViewController.swift */,
+				EBDC5824280660E000E77E02 /* pushStream.h */,
+				EBDC5825280660E000E77E02 /* pushStream.c */,
+				EBDC581328065F9200E77E02 /* Assets.xcassets */,
+				EBDC581528065F9200E77E02 /* Main.storyboard */,
+				EBDC581828065F9200E77E02 /* ffPushStream.entitlements */,
+				EBDC5823280660E000E77E02 /* ffPushStream-Bridging-Header.h */,
+			);
+			path = ffPushStream;
+			sourceTree = "<group>";
+		};
+		EBDC581E28065FAA00E77E02 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EBDC581F28065FAA00E77E02 /* librtmp.1.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EBDC580B28065F9100E77E02 /* ffPushStream */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBDC581B28065F9200E77E02 /* Build configuration list for PBXNativeTarget "ffPushStream" */;
+			buildPhases = (
+				EBDC580828065F9100E77E02 /* Sources */,
+				EBDC580928065F9100E77E02 /* Frameworks */,
+				EBDC580A28065F9100E77E02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ffPushStream;
+			productName = ffPushStream;
+			productReference = EBDC580C28065F9100E77E02 /* ffPushStream.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EBDC580428065F9100E77E02 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					EBDC580B28065F9100E77E02 = {
+						CreatedOnToolsVersion = 13.3.1;
+						LastSwiftMigration = 1330;
+					};
+				};
+			};
+			buildConfigurationList = EBDC580728065F9100E77E02 /* Build configuration list for PBXProject "ffPushStream" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EBDC580328065F9100E77E02;
+			productRefGroup = EBDC580D28065F9100E77E02 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EBDC580B28065F9100E77E02 /* ffPushStream */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EBDC580A28065F9100E77E02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBDC581428065F9200E77E02 /* Assets.xcassets in Resources */,
+				EBDC581728065F9200E77E02 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EBDC580828065F9100E77E02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBDC581228065F9100E77E02 /* ViewController.swift in Sources */,
+				EBDC581028065F9100E77E02 /* AppDelegate.swift in Sources */,
+				EBDC5826280660E000E77E02 /* pushStream.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EBDC581528065F9200E77E02 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBDC581628065F9200E77E02 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EBDC581928065F9200E77E02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EBDC581A28065F9200E77E02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		EBDC581C28065F9200E77E02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ffPushStream/ffPushStream.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/usr/local/Cellar/rtmpdump/2.4+20151223_1/lib",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ffPushStream;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ffPushStream/ffPushStream-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					"\"/usr/local/Cellar/rtmpdump/2.4+20151223_1/include\"",
+					"\"/usr/local/Cellar/openssl@1.1/1.1.1n/include\"",
+				);
+			};
+			name = Debug;
+		};
+		EBDC581D28065F9200E77E02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ffPushStream/ffPushStream.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/usr/local/Cellar/rtmpdump/2.4+20151223_1/lib",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ffPushStream;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ffPushStream/ffPushStream-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					"\"/usr/local/Cellar/rtmpdump/2.4+20151223_1/include\"",
+					"\"/usr/local/Cellar/openssl@1.1/1.1.1n/include\"",
+				);
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EBDC580728065F9100E77E02 /* Build configuration list for PBXProject "ffPushStream" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBDC581928065F9200E77E02 /* Debug */,
+				EBDC581A28065F9200E77E02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBDC581B28065F9200E77E02 /* Build configuration list for PBXNativeTarget "ffPushStream" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBDC581C28065F9200E77E02 /* Debug */,
+				EBDC581D28065F9200E77E02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EBDC580428065F9100E77E02 /* Project object */;
+}

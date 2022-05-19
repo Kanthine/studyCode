@@ -1,0 +1,380 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EBFCABCA27B50C1E00DB65FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBFCABC927B50C1E00DB65FE /* AppDelegate.m */; };
+		EBFCABD027B50C1E00DB65FE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBFCABCF27B50C1E00DB65FE /* ViewController.m */; };
+		EBFCABD527B50C1F00DB65FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBFCABD427B50C1F00DB65FE /* Assets.xcassets */; };
+		EBFCABD827B50C1F00DB65FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBFCABD627B50C1F00DB65FE /* LaunchScreen.storyboard */; };
+		EBFCABDB27B50C1F00DB65FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBFCABDA27B50C1F00DB65FE /* main.m */; };
+		EBFCABE227B50D6200DB65FE /* 沙化效果.mov in Resources */ = {isa = PBXBuildFile; fileRef = EBFCABE127B50D6200DB65FE /* 沙化效果.mov */; };
+		EBFCABE927B511DB00DB65FE /* TextShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = EBFCABE427B511DB00DB65FE /* TextShader.metal */; };
+		EBFCABEB27B511DB00DB65FE /* TextRender.m in Sources */ = {isa = PBXBuildFile; fileRef = EBFCABE827B511DB00DB65FE /* TextRender.m */; };
+		EBFCABEF27B512C900DB65FE /* WordFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = EBFCABEE27B512C900DB65FE /* WordFactory.m */; };
+		EBFCABF127B518BC00DB65FE /* B站沙化.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = EBFCABF027B518BC00DB65FE /* B站沙化.MP4 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EBFCABC527B50C1E00DB65FE /* ParticleWord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParticleWord.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBFCABC827B50C1E00DB65FE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EBFCABC927B50C1E00DB65FE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EBFCABCE27B50C1E00DB65FE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EBFCABCF27B50C1E00DB65FE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EBFCABD427B50C1F00DB65FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EBFCABD727B50C1F00DB65FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EBFCABD927B50C1F00DB65FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBFCABDA27B50C1F00DB65FE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EBFCABE127B50D6200DB65FE /* 沙化效果.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "沙化效果.mov"; sourceTree = "<group>"; };
+		EBFCABE427B511DB00DB65FE /* TextShader.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = TextShader.metal; sourceTree = "<group>"; };
+		EBFCABE627B511DB00DB65FE /* TextRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextRender.h; sourceTree = "<group>"; };
+		EBFCABE827B511DB00DB65FE /* TextRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextRender.m; sourceTree = "<group>"; };
+		EBFCABEC27B5123A00DB65FE /* TextShaderTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextShaderTypes.h; sourceTree = "<group>"; };
+		EBFCABED27B512C900DB65FE /* WordFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WordFactory.h; sourceTree = "<group>"; };
+		EBFCABEE27B512C900DB65FE /* WordFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WordFactory.m; sourceTree = "<group>"; };
+		EBFCABF027B518BC00DB65FE /* B站沙化.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "B站沙化.MP4"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EBFCABC227B50C1E00DB65FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EBFCABBC27B50C1E00DB65FE = {
+			isa = PBXGroup;
+			children = (
+				EBFCABF027B518BC00DB65FE /* B站沙化.MP4 */,
+				EBFCABE127B50D6200DB65FE /* 沙化效果.mov */,
+				EBFCABE327B511DB00DB65FE /* WordRender */,
+				EBFCABC727B50C1E00DB65FE /* ParticleWord */,
+				EBFCABC627B50C1E00DB65FE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EBFCABC627B50C1E00DB65FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EBFCABC527B50C1E00DB65FE /* ParticleWord.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EBFCABC727B50C1E00DB65FE /* ParticleWord */ = {
+			isa = PBXGroup;
+			children = (
+				EBFCABC827B50C1E00DB65FE /* AppDelegate.h */,
+				EBFCABC927B50C1E00DB65FE /* AppDelegate.m */,
+				EBFCABCE27B50C1E00DB65FE /* ViewController.h */,
+				EBFCABCF27B50C1E00DB65FE /* ViewController.m */,
+				EBFCABD427B50C1F00DB65FE /* Assets.xcassets */,
+				EBFCABD627B50C1F00DB65FE /* LaunchScreen.storyboard */,
+				EBFCABD927B50C1F00DB65FE /* Info.plist */,
+				EBFCABDA27B50C1F00DB65FE /* main.m */,
+			);
+			path = ParticleWord;
+			sourceTree = "<group>";
+		};
+		EBFCABE327B511DB00DB65FE /* WordRender */ = {
+			isa = PBXGroup;
+			children = (
+				EBFCABE627B511DB00DB65FE /* TextRender.h */,
+				EBFCABE827B511DB00DB65FE /* TextRender.m */,
+				EBFCABED27B512C900DB65FE /* WordFactory.h */,
+				EBFCABEE27B512C900DB65FE /* WordFactory.m */,
+				EBFCABEC27B5123A00DB65FE /* TextShaderTypes.h */,
+				EBFCABE427B511DB00DB65FE /* TextShader.metal */,
+			);
+			path = WordRender;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EBFCABC427B50C1E00DB65FE /* ParticleWord */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBFCABDE27B50C1F00DB65FE /* Build configuration list for PBXNativeTarget "ParticleWord" */;
+			buildPhases = (
+				EBFCABC127B50C1E00DB65FE /* Sources */,
+				EBFCABC227B50C1E00DB65FE /* Frameworks */,
+				EBFCABC327B50C1E00DB65FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ParticleWord;
+			productName = ParticleWord;
+			productReference = EBFCABC527B50C1E00DB65FE /* ParticleWord.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EBFCABBD27B50C1E00DB65FE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					EBFCABC427B50C1E00DB65FE = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = EBFCABC027B50C1E00DB65FE /* Build configuration list for PBXProject "ParticleWord" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EBFCABBC27B50C1E00DB65FE;
+			productRefGroup = EBFCABC627B50C1E00DB65FE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EBFCABC427B50C1E00DB65FE /* ParticleWord */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EBFCABC327B50C1E00DB65FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBFCABD827B50C1F00DB65FE /* LaunchScreen.storyboard in Resources */,
+				EBFCABF127B518BC00DB65FE /* B站沙化.MP4 in Resources */,
+				EBFCABE227B50D6200DB65FE /* 沙化效果.mov in Resources */,
+				EBFCABD527B50C1F00DB65FE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EBFCABC127B50C1E00DB65FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBFCABEF27B512C900DB65FE /* WordFactory.m in Sources */,
+				EBFCABD027B50C1E00DB65FE /* ViewController.m in Sources */,
+				EBFCABEB27B511DB00DB65FE /* TextRender.m in Sources */,
+				EBFCABE927B511DB00DB65FE /* TextShader.metal in Sources */,
+				EBFCABCA27B50C1E00DB65FE /* AppDelegate.m in Sources */,
+				EBFCABDB27B50C1F00DB65FE /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EBFCABD627B50C1F00DB65FE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBFCABD727B50C1F00DB65FE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EBFCABDC27B50C1F00DB65FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EBFCABDD27B50C1F00DB65FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EBFCABDF27B50C1F00DB65FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ParticleWord/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ParticleWord;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EBFCABE027B50C1F00DB65FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ParticleWord/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ParticleWord;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EBFCABC027B50C1E00DB65FE /* Build configuration list for PBXProject "ParticleWord" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBFCABDC27B50C1F00DB65FE /* Debug */,
+				EBFCABDD27B50C1F00DB65FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBFCABDE27B50C1F00DB65FE /* Build configuration list for PBXNativeTarget "ParticleWord" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBFCABDF27B50C1F00DB65FE /* Debug */,
+				EBFCABE027B50C1F00DB65FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EBFCABBD27B50C1E00DB65FE /* Project object */;
+}

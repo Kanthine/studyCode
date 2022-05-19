@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>DeferredLighting-iOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+<<<<<<< HEAD:粒子特效/火焰粒子_iOS/HelloTriangle.xcodeproj/xcuserdata/longlong.xcuserdatad/xcschemes/xcschememanagement.plist
+			<integer>2</integer>
+=======
+			<integer>0</integer>
+>>>>>>> 44d10a079c5d52fc74d2f7b477be0c27e192c0d9:粒子特效/火焰_Metal/DeferredLighting.xcodeproj/xcuserdata/i7y.xcuserdatad/xcschemes/xcschememanagement.plist
+		</dict>
+		<key>DeferredLighting-macOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+<<<<<<< HEAD:粒子特效/火焰粒子_iOS/HelloTriangle.xcodeproj/xcuserdata/longlong.xcuserdatad/xcschemes/xcschememanagement.plist
+=======
+			<integer>2</integer>
+		</dict>
+		<key>DeferredLighting-tvOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+>>>>>>> 44d10a079c5d52fc74d2f7b477be0c27e192c0d9:粒子特效/火焰_Metal/DeferredLighting.xcodeproj/xcuserdata/i7y.xcuserdatad/xcschemes/xcschememanagement.plist
+			<integer>1</integer>
+		</dict>
+		<key>MSL20Shaders.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>MSL23Shaders.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+</dict>
+</plist>

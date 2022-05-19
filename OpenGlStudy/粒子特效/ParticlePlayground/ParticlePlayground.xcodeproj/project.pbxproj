@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EB000304279F94E60072ADDD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB000303279F94E60072ADDD /* AppDelegate.m */; };
+		EB00030A279F94E70072ADDD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB000309279F94E70072ADDD /* ViewController.m */; };
+		EB00030F279F94E80072ADDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB00030E279F94E80072ADDD /* Assets.xcassets */; };
+		EB000312279F94E80072ADDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB000310279F94E80072ADDD /* LaunchScreen.storyboard */; };
+		EB000315279F94E80072ADDD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB000314279F94E80072ADDD /* main.m */; };
+		EB000331279F95760072ADDD /* GLResourceManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = EB000321279F95760072ADDD /* GLResourceManager.mm */; };
+		EB000333279F95760072ADDD /* GLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = EB000324279F95760072ADDD /* GLView.mm */; };
+		EB000334279F95760072ADDD /* GLRender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB000325279F95760072ADDD /* GLRender.cpp */; };
+		EB000336279F95760072ADDD /* VertexShader.sh in Resources */ = {isa = PBXBuildFile; fileRef = EB00032D279F95760072ADDD /* VertexShader.sh */; };
+		EB000339279F95760072ADDD /* FragmentShader.sh in Resources */ = {isa = PBXBuildFile; fileRef = EB000330279F95760072ADDD /* FragmentShader.sh */; };
+		EB00033B279F96430072ADDD /* FragmentShader_brazier.sh in Resources */ = {isa = PBXBuildFile; fileRef = EB00033A279F96430072ADDD /* FragmentShader_brazier.sh */; };
+		EB00033D279F966D0072ADDD /* VertexShader_brazier.sh in Resources */ = {isa = PBXBuildFile; fileRef = EB00033C279F966D0072ADDD /* VertexShader_brazier.sh */; };
+		EB00033F279F96A40072ADDD /* brazier.obj in Resources */ = {isa = PBXBuildFile; fileRef = EB00033E279F96A40072ADDD /* brazier.obj */; };
+		EB000342279F96E80072ADDD /* ParticleSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB000340279F96E80072ADDD /* ParticleSystem.cpp */; };
+		EB000345279F992E0072ADDD /* Wall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB000343279F992E0072ADDD /* Wall.cpp */; };
+		EB00034A279FA9880072ADDD /* GLMatrixState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB000349279FA9880072ADDD /* GLMatrixState.cpp */; };
+		EB00035927A000830072ADDD /* DataConstant.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB00035727A000830072ADDD /* DataConstant.cpp */; };
+		EBB3C3D727A0F43D00359D66 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = EBB3C3CF27A0F43D00359D66 /* fire.png */; };
+		EBB3C3D827A0F43D00359D66 /* wall0.png in Resources */ = {isa = PBXBuildFile; fileRef = EBB3C3D027A0F43D00359D66 /* wall0.png */; };
+		EBB3C3D927A0F43D00359D66 /* wall1.png in Resources */ = {isa = PBXBuildFile; fileRef = EBB3C3D127A0F43D00359D66 /* wall1.png */; };
+		EBB3C3DA27A0F43D00359D66 /* wall3.png in Resources */ = {isa = PBXBuildFile; fileRef = EBB3C3D227A0F43D00359D66 /* wall3.png */; };
+		EBB3C3DB27A0F43D00359D66 /* wall2.png in Resources */ = {isa = PBXBuildFile; fileRef = EBB3C3D327A0F43D00359D66 /* wall2.png */; };
+		EBB3C3DC27A0F43D00359D66 /* wall5.png in Resources */ = {isa = PBXBuildFile; fileRef = EBB3C3D427A0F43D00359D66 /* wall5.png */; };
+		EBB3C3DD27A0F43D00359D66 /* wall4.png in Resources */ = {isa = PBXBuildFile; fileRef = EBB3C3D527A0F43D00359D66 /* wall4.png */; };
+		EBB3C3DE27A0F43D00359D66 /* brazier.png in Resources */ = {isa = PBXBuildFile; fileRef = EBB3C3D627A0F43D00359D66 /* brazier.png */; };
+		EBB3C3E127A11E6800359D66 /* TextureObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EBB3C3DF27A11E6800359D66 /* TextureObj.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EB0002FF279F94E60072ADDD /* ParticlePlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParticlePlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB000302279F94E60072ADDD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EB000303279F94E60072ADDD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EB000308279F94E60072ADDD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EB000309279F94E70072ADDD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EB00030E279F94E80072ADDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EB000311279F94E80072ADDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EB000313279F94E80072ADDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB000314279F94E80072ADDD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EB00031D279F95760072ADDD /* GLMatrix.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GLMatrix.hpp; sourceTree = "<group>"; };
+		EB00031E279F95760072ADDD /* GLResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLResourceManager.h; sourceTree = "<group>"; };
+		EB00031F279F95760072ADDD /* ShaderTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderTool.h; sourceTree = "<group>"; };
+		EB000320279F95760072ADDD /* GLMatrixState.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GLMatrixState.hpp; sourceTree = "<group>"; };
+		EB000321279F95760072ADDD /* GLResourceManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GLResourceManager.mm; sourceTree = "<group>"; };
+		EB000324279F95760072ADDD /* GLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GLView.mm; sourceTree = "<group>"; };
+		EB000325279F95760072ADDD /* GLRender.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLRender.cpp; sourceTree = "<group>"; };
+		EB000326279F95760072ADDD /* GLRender.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GLRender.hpp; sourceTree = "<group>"; };
+		EB000327279F95760072ADDD /* GLRenderInterface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GLRenderInterface.hpp; sourceTree = "<group>"; };
+		EB000328279F95760072ADDD /* GLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLView.h; sourceTree = "<group>"; };
+		EB00032D279F95760072ADDD /* VertexShader.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = VertexShader.sh; sourceTree = "<group>"; };
+		EB000330279F95760072ADDD /* FragmentShader.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = FragmentShader.sh; sourceTree = "<group>"; };
+		EB00033A279F96430072ADDD /* FragmentShader_brazier.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = FragmentShader_brazier.sh; sourceTree = "<group>"; };
+		EB00033C279F966D0072ADDD /* VertexShader_brazier.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = VertexShader_brazier.sh; sourceTree = "<group>"; };
+		EB00033E279F96A40072ADDD /* brazier.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = brazier.obj; sourceTree = "<group>"; };
+		EB000340279F96E80072ADDD /* ParticleSystem.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ParticleSystem.cpp; sourceTree = "<group>"; };
+		EB000341279F96E80072ADDD /* ParticleSystem.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ParticleSystem.hpp; sourceTree = "<group>"; };
+		EB000343279F992E0072ADDD /* Wall.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Wall.cpp; sourceTree = "<group>"; };
+		EB000344279F992E0072ADDD /* Wall.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Wall.hpp; sourceTree = "<group>"; };
+		EB000347279FA2870072ADDD /* Normal.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Normal.hpp; sourceTree = "<group>"; };
+		EB000349279FA9880072ADDD /* GLMatrixState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLMatrixState.cpp; sourceTree = "<group>"; };
+		EB00035727A000830072ADDD /* DataConstant.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DataConstant.cpp; sourceTree = "<group>"; };
+		EB00035827A000830072ADDD /* DataConstant.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DataConstant.hpp; sourceTree = "<group>"; };
+		EBB3C3CF27A0F43D00359D66 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire.png; sourceTree = "<group>"; };
+		EBB3C3D027A0F43D00359D66 /* wall0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall0.png; sourceTree = "<group>"; };
+		EBB3C3D127A0F43D00359D66 /* wall1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall1.png; sourceTree = "<group>"; };
+		EBB3C3D227A0F43D00359D66 /* wall3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall3.png; sourceTree = "<group>"; };
+		EBB3C3D327A0F43D00359D66 /* wall2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall2.png; sourceTree = "<group>"; };
+		EBB3C3D427A0F43D00359D66 /* wall5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall5.png; sourceTree = "<group>"; };
+		EBB3C3D527A0F43D00359D66 /* wall4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall4.png; sourceTree = "<group>"; };
+		EBB3C3D627A0F43D00359D66 /* brazier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brazier.png; sourceTree = "<group>"; };
+		EBB3C3DF27A11E6800359D66 /* TextureObj.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TextureObj.cpp; sourceTree = "<group>"; };
+		EBB3C3E027A11E6800359D66 /* TextureObj.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TextureObj.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EB0002FC279F94E60072ADDD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EB0002F6279F94E60072ADDD = {
+			isa = PBXGroup;
+			children = (
+				EB00031B279F95760072ADDD /* OpenGLEngine */,
+				EB000301279F94E60072ADDD /* ParticlePlayground */,
+				EB000300279F94E60072ADDD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EB000300279F94E60072ADDD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB0002FF279F94E60072ADDD /* ParticlePlayground.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EB000301279F94E60072ADDD /* ParticlePlayground */ = {
+			isa = PBXGroup;
+			children = (
+				EB000302279F94E60072ADDD /* AppDelegate.h */,
+				EB000303279F94E60072ADDD /* AppDelegate.m */,
+				EB000308279F94E60072ADDD /* ViewController.h */,
+				EB000309279F94E70072ADDD /* ViewController.m */,
+				EB00030E279F94E80072ADDD /* Assets.xcassets */,
+				EB000310279F94E80072ADDD /* LaunchScreen.storyboard */,
+				EB000313279F94E80072ADDD /* Info.plist */,
+				EB000314279F94E80072ADDD /* main.m */,
+			);
+			path = ParticlePlayground;
+			sourceTree = "<group>";
+		};
+		EB00031B279F95760072ADDD /* OpenGLEngine */ = {
+			isa = PBXGroup;
+			children = (
+				EBB3C3CE27A0F43D00359D66 /* Resource */,
+				EB000329279F95760072ADDD /* Model */,
+				EB000323279F95760072ADDD /* Render */,
+				EB00032C279F95760072ADDD /* Shader */,
+				EB00031C279F95760072ADDD /* Unit */,
+			);
+			path = OpenGLEngine;
+			sourceTree = "<group>";
+		};
+		EB00031C279F95760072ADDD /* Unit */ = {
+			isa = PBXGroup;
+			children = (
+				EB00031D279F95760072ADDD /* GLMatrix.hpp */,
+				EB000349279FA9880072ADDD /* GLMatrixState.cpp */,
+				EB000320279F95760072ADDD /* GLMatrixState.hpp */,
+				EB00031E279F95760072ADDD /* GLResourceManager.h */,
+				EB000321279F95760072ADDD /* GLResourceManager.mm */,
+				EB00031F279F95760072ADDD /* ShaderTool.h */,
+				EB00035727A000830072ADDD /* DataConstant.cpp */,
+				EB00035827A000830072ADDD /* DataConstant.hpp */,
+			);
+			path = Unit;
+			sourceTree = "<group>";
+		};
+		EB000323279F95760072ADDD /* Render */ = {
+			isa = PBXGroup;
+			children = (
+				EB000325279F95760072ADDD /* GLRender.cpp */,
+				EB000326279F95760072ADDD /* GLRender.hpp */,
+				EB000327279F95760072ADDD /* GLRenderInterface.hpp */,
+				EB000328279F95760072ADDD /* GLView.h */,
+				EB000324279F95760072ADDD /* GLView.mm */,
+			);
+			path = Render;
+			sourceTree = "<group>";
+		};
+		EB000329279F95760072ADDD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB000340279F96E80072ADDD /* ParticleSystem.cpp */,
+				EB000341279F96E80072ADDD /* ParticleSystem.hpp */,
+				EB000343279F992E0072ADDD /* Wall.cpp */,
+				EB000344279F992E0072ADDD /* Wall.hpp */,
+				EB000347279FA2870072ADDD /* Normal.hpp */,
+				EBB3C3DF27A11E6800359D66 /* TextureObj.cpp */,
+				EBB3C3E027A11E6800359D66 /* TextureObj.hpp */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EB00032C279F95760072ADDD /* Shader */ = {
+			isa = PBXGroup;
+			children = (
+				EB000330279F95760072ADDD /* FragmentShader.sh */,
+				EB00033A279F96430072ADDD /* FragmentShader_brazier.sh */,
+				EB00033C279F966D0072ADDD /* VertexShader_brazier.sh */,
+				EB00032D279F95760072ADDD /* VertexShader.sh */,
+				EB00033E279F96A40072ADDD /* brazier.obj */,
+			);
+			path = Shader;
+			sourceTree = "<group>";
+		};
+		EBB3C3CE27A0F43D00359D66 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				EBB3C3CF27A0F43D00359D66 /* fire.png */,
+				EBB3C3D027A0F43D00359D66 /* wall0.png */,
+				EBB3C3D127A0F43D00359D66 /* wall1.png */,
+				EBB3C3D227A0F43D00359D66 /* wall3.png */,
+				EBB3C3D327A0F43D00359D66 /* wall2.png */,
+				EBB3C3D427A0F43D00359D66 /* wall5.png */,
+				EBB3C3D527A0F43D00359D66 /* wall4.png */,
+				EBB3C3D627A0F43D00359D66 /* brazier.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EB0002FE279F94E60072ADDD /* ParticlePlayground */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB000318279F94E80072ADDD /* Build configuration list for PBXNativeTarget "ParticlePlayground" */;
+			buildPhases = (
+				EB0002FB279F94E60072ADDD /* Sources */,
+				EB0002FC279F94E60072ADDD /* Frameworks */,
+				EB0002FD279F94E60072ADDD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ParticlePlayground;
+			productName = ParticlePlayground;
+			productReference = EB0002FF279F94E60072ADDD /* ParticlePlayground.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EB0002F7279F94E60072ADDD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					EB0002FE279F94E60072ADDD = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = EB0002FA279F94E60072ADDD /* Build configuration list for PBXProject "ParticlePlayground" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EB0002F6279F94E60072ADDD;
+			productRefGroup = EB000300279F94E60072ADDD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EB0002FE279F94E60072ADDD /* ParticlePlayground */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EB0002FD279F94E60072ADDD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBB3C3DE27A0F43D00359D66 /* brazier.png in Resources */,
+				EB000312279F94E80072ADDD /* LaunchScreen.storyboard in Resources */,
+				EBB3C3DA27A0F43D00359D66 /* wall3.png in Resources */,
+				EBB3C3DB27A0F43D00359D66 /* wall2.png in Resources */,
+				EBB3C3D727A0F43D00359D66 /* fire.png in Resources */,
+				EBB3C3D827A0F43D00359D66 /* wall0.png in Resources */,
+				EB00033B279F96430072ADDD /* FragmentShader_brazier.sh in Resources */,
+				EBB3C3DC27A0F43D00359D66 /* wall5.png in Resources */,
+				EB00033D279F966D0072ADDD /* VertexShader_brazier.sh in Resources */,
+				EB000336279F95760072ADDD /* VertexShader.sh in Resources */,
+				EB000339279F95760072ADDD /* FragmentShader.sh in Resources */,
+				EB00033F279F96A40072ADDD /* brazier.obj in Resources */,
+				EB00030F279F94E80072ADDD /* Assets.xcassets in Resources */,
+				EBB3C3DD27A0F43D00359D66 /* wall4.png in Resources */,
+				EBB3C3D927A0F43D00359D66 /* wall1.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EB0002FB279F94E60072ADDD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB00030A279F94E70072ADDD /* ViewController.m in Sources */,
+				EB00034A279FA9880072ADDD /* GLMatrixState.cpp in Sources */,
+				EB000304279F94E60072ADDD /* AppDelegate.m in Sources */,
+				EB000334279F95760072ADDD /* GLRender.cpp in Sources */,
+				EB000333279F95760072ADDD /* GLView.mm in Sources */,
+				EB000331279F95760072ADDD /* GLResourceManager.mm in Sources */,
+				EBB3C3E127A11E6800359D66 /* TextureObj.cpp in Sources */,
+				EB000315279F94E80072ADDD /* main.m in Sources */,
+				EB00035927A000830072ADDD /* DataConstant.cpp in Sources */,
+				EB000342279F96E80072ADDD /* ParticleSystem.cpp in Sources */,
+				EB000345279F992E0072ADDD /* Wall.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EB000310279F94E80072ADDD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB000311279F94E80072ADDD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EB000316279F94E80072ADDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EB000317279F94E80072ADDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EB000319279F94E80072ADDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ParticlePlayground/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeLeft;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ParticlePlayground;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EB00031A279F94E80072ADDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ParticlePlayground/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeLeft;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ParticlePlayground;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EB0002FA279F94E60072ADDD /* Build configuration list for PBXProject "ParticlePlayground" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB000316279F94E80072ADDD /* Debug */,
+				EB000317279F94E80072ADDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB000318279F94E80072ADDD /* Build configuration list for PBXNativeTarget "ParticlePlayground" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB000319279F94E80072ADDD /* Debug */,
+				EB00031A279F94E80072ADDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EB0002F7279F94E60072ADDD /* Project object */;
+}

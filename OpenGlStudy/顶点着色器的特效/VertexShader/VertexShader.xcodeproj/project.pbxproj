@@ -1,0 +1,446 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EB14A89F279A59230028AFDF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB14A89E279A59230028AFDF /* AppDelegate.m */; };
+		EB14A8A5279A59230028AFDF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB14A8A4279A59230028AFDF /* ViewController.m */; };
+		EB14A8AA279A59240028AFDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB14A8A9279A59240028AFDF /* Assets.xcassets */; };
+		EB14A8AD279A59240028AFDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB14A8AB279A59240028AFDF /* LaunchScreen.storyboard */; };
+		EB14A8B0279A59240028AFDF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB14A8AF279A59240028AFDF /* main.m */; };
+		EB14A8CA279A59610028AFDF /* GLResourceManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = EB14A8BC279A59610028AFDF /* GLResourceManager.mm */; };
+		EB14A8CB279A59610028AFDF /* GLMatrixState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB14A8BD279A59610028AFDF /* GLMatrixState.cpp */; };
+		EB14A8CC279A59610028AFDF /* GLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = EB14A8BF279A59610028AFDF /* GLView.mm */; };
+		EB14A8CD279A59610028AFDF /* GLRender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB14A8C0279A59610028AFDF /* GLRender.cpp */; };
+		EB14A8CF279A59610028AFDF /* VertexShader_X.sh in Resources */ = {isa = PBXBuildFile; fileRef = EB14A8C8279A59610028AFDF /* VertexShader_X.sh */; };
+		EB14A8D0279A59610028AFDF /* FragmentShader.sh in Resources */ = {isa = PBXBuildFile; fileRef = EB14A8C9279A59610028AFDF /* FragmentShader.sh */; };
+		EB14A8D3279A5E9B0028AFDF /* VertexShader_Xie.sh in Resources */ = {isa = PBXBuildFile; fileRef = EB14A8D1279A5E9B0028AFDF /* VertexShader_Xie.sh */; };
+		EB14A8D4279A5E9B0028AFDF /* VertexShader_XY.sh in Resources */ = {isa = PBXBuildFile; fileRef = EB14A8D2279A5E9B0028AFDF /* VertexShader_XY.sh */; };
+		EB14A8D7279A5FA90028AFDF /* TextureRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB14A8D5279A5FA90028AFDF /* TextureRect.cpp */; };
+		EB14A8ED279A97DC0028AFDF /* flagTest.png in Resources */ = {isa = PBXBuildFile; fileRef = EB14A8EC279A97DC0028AFDF /* flagTest.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EB14A89A279A59230028AFDF /* VertexShader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VertexShader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB14A89D279A59230028AFDF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EB14A89E279A59230028AFDF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EB14A8A3279A59230028AFDF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EB14A8A4279A59230028AFDF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EB14A8A9279A59240028AFDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EB14A8AC279A59240028AFDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EB14A8AE279A59240028AFDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB14A8AF279A59240028AFDF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EB14A8B8279A59610028AFDF /* GLMatrix.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GLMatrix.hpp; sourceTree = "<group>"; };
+		EB14A8B9279A59610028AFDF /* GLResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLResourceManager.h; sourceTree = "<group>"; };
+		EB14A8BA279A59610028AFDF /* ShaderTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderTool.h; sourceTree = "<group>"; };
+		EB14A8BB279A59610028AFDF /* GLMatrixState.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GLMatrixState.hpp; sourceTree = "<group>"; };
+		EB14A8BC279A59610028AFDF /* GLResourceManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GLResourceManager.mm; sourceTree = "<group>"; };
+		EB14A8BD279A59610028AFDF /* GLMatrixState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLMatrixState.cpp; sourceTree = "<group>"; };
+		EB14A8BF279A59610028AFDF /* GLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GLView.mm; sourceTree = "<group>"; };
+		EB14A8C0279A59610028AFDF /* GLRender.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLRender.cpp; sourceTree = "<group>"; };
+		EB14A8C1279A59610028AFDF /* GLRender.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GLRender.hpp; sourceTree = "<group>"; };
+		EB14A8C2279A59610028AFDF /* GLRenderInterface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GLRenderInterface.hpp; sourceTree = "<group>"; };
+		EB14A8C3279A59610028AFDF /* GLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLView.h; sourceTree = "<group>"; };
+		EB14A8C8279A59610028AFDF /* VertexShader_X.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = VertexShader_X.sh; sourceTree = "<group>"; };
+		EB14A8C9279A59610028AFDF /* FragmentShader.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = FragmentShader.sh; sourceTree = "<group>"; };
+		EB14A8D1279A5E9B0028AFDF /* VertexShader_Xie.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = VertexShader_Xie.sh; sourceTree = "<group>"; };
+		EB14A8D2279A5E9B0028AFDF /* VertexShader_XY.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = VertexShader_XY.sh; sourceTree = "<group>"; };
+		EB14A8D5279A5FA90028AFDF /* TextureRect.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TextureRect.cpp; sourceTree = "<group>"; };
+		EB14A8D6279A5FA90028AFDF /* TextureRect.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TextureRect.hpp; sourceTree = "<group>"; };
+		EB14A8EC279A97DC0028AFDF /* flagTest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flagTest.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EB14A897279A59230028AFDF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EB14A891279A59230028AFDF = {
+			isa = PBXGroup;
+			children = (
+				EB14A8B6279A59610028AFDF /* OpenGLEngine */,
+				EB14A89C279A59230028AFDF /* VertexShader */,
+				EB14A89B279A59230028AFDF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EB14A89B279A59230028AFDF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB14A89A279A59230028AFDF /* VertexShader.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EB14A89C279A59230028AFDF /* VertexShader */ = {
+			isa = PBXGroup;
+			children = (
+				EB14A89D279A59230028AFDF /* AppDelegate.h */,
+				EB14A89E279A59230028AFDF /* AppDelegate.m */,
+				EB14A8A3279A59230028AFDF /* ViewController.h */,
+				EB14A8A4279A59230028AFDF /* ViewController.m */,
+				EB14A8EC279A97DC0028AFDF /* flagTest.png */,
+				EB14A8A9279A59240028AFDF /* Assets.xcassets */,
+				EB14A8AB279A59240028AFDF /* LaunchScreen.storyboard */,
+				EB14A8AE279A59240028AFDF /* Info.plist */,
+				EB14A8AF279A59240028AFDF /* main.m */,
+			);
+			path = VertexShader;
+			sourceTree = "<group>";
+		};
+		EB14A8B6279A59610028AFDF /* OpenGLEngine */ = {
+			isa = PBXGroup;
+			children = (
+				EB14A8B7279A59610028AFDF /* Unit */,
+				EB14A8BE279A59610028AFDF /* Render */,
+				EB14A8C4279A59610028AFDF /* Model */,
+				EB14A8C7279A59610028AFDF /* Shader */,
+			);
+			path = OpenGLEngine;
+			sourceTree = "<group>";
+		};
+		EB14A8B7279A59610028AFDF /* Unit */ = {
+			isa = PBXGroup;
+			children = (
+				EB14A8B8279A59610028AFDF /* GLMatrix.hpp */,
+				EB14A8BD279A59610028AFDF /* GLMatrixState.cpp */,
+				EB14A8BB279A59610028AFDF /* GLMatrixState.hpp */,
+				EB14A8B9279A59610028AFDF /* GLResourceManager.h */,
+				EB14A8BC279A59610028AFDF /* GLResourceManager.mm */,
+				EB14A8BA279A59610028AFDF /* ShaderTool.h */,
+			);
+			path = Unit;
+			sourceTree = "<group>";
+		};
+		EB14A8BE279A59610028AFDF /* Render */ = {
+			isa = PBXGroup;
+			children = (
+				EB14A8C0279A59610028AFDF /* GLRender.cpp */,
+				EB14A8C1279A59610028AFDF /* GLRender.hpp */,
+				EB14A8C2279A59610028AFDF /* GLRenderInterface.hpp */,
+				EB14A8C3279A59610028AFDF /* GLView.h */,
+				EB14A8BF279A59610028AFDF /* GLView.mm */,
+			);
+			path = Render;
+			sourceTree = "<group>";
+		};
+		EB14A8C4279A59610028AFDF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB14A8D5279A5FA90028AFDF /* TextureRect.cpp */,
+				EB14A8D6279A5FA90028AFDF /* TextureRect.hpp */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EB14A8C7279A59610028AFDF /* Shader */ = {
+			isa = PBXGroup;
+			children = (
+				EB14A8D1279A5E9B0028AFDF /* VertexShader_Xie.sh */,
+				EB14A8D2279A5E9B0028AFDF /* VertexShader_XY.sh */,
+				EB14A8C8279A59610028AFDF /* VertexShader_X.sh */,
+				EB14A8C9279A59610028AFDF /* FragmentShader.sh */,
+			);
+			path = Shader;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EB14A899279A59230028AFDF /* VertexShader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB14A8B3279A59240028AFDF /* Build configuration list for PBXNativeTarget "VertexShader" */;
+			buildPhases = (
+				EB14A896279A59230028AFDF /* Sources */,
+				EB14A897279A59230028AFDF /* Frameworks */,
+				EB14A898279A59230028AFDF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VertexShader;
+			productName = VertexShader;
+			productReference = EB14A89A279A59230028AFDF /* VertexShader.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EB14A892279A59230028AFDF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					EB14A899279A59230028AFDF = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = EB14A895279A59230028AFDF /* Build configuration list for PBXProject "VertexShader" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EB14A891279A59230028AFDF;
+			productRefGroup = EB14A89B279A59230028AFDF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EB14A899279A59230028AFDF /* VertexShader */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EB14A898279A59230028AFDF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB14A8ED279A97DC0028AFDF /* flagTest.png in Resources */,
+				EB14A8AD279A59240028AFDF /* LaunchScreen.storyboard in Resources */,
+				EB14A8CF279A59610028AFDF /* VertexShader_X.sh in Resources */,
+				EB14A8D0279A59610028AFDF /* FragmentShader.sh in Resources */,
+				EB14A8AA279A59240028AFDF /* Assets.xcassets in Resources */,
+				EB14A8D4279A5E9B0028AFDF /* VertexShader_XY.sh in Resources */,
+				EB14A8D3279A5E9B0028AFDF /* VertexShader_Xie.sh in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EB14A896279A59230028AFDF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB14A8D7279A5FA90028AFDF /* TextureRect.cpp in Sources */,
+				EB14A8CD279A59610028AFDF /* GLRender.cpp in Sources */,
+				EB14A8CC279A59610028AFDF /* GLView.mm in Sources */,
+				EB14A8A5279A59230028AFDF /* ViewController.m in Sources */,
+				EB14A89F279A59230028AFDF /* AppDelegate.m in Sources */,
+				EB14A8CA279A59610028AFDF /* GLResourceManager.mm in Sources */,
+				EB14A8CB279A59610028AFDF /* GLMatrixState.cpp in Sources */,
+				EB14A8B0279A59240028AFDF /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EB14A8AB279A59240028AFDF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB14A8AC279A59240028AFDF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EB14A8B1279A59240028AFDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EB14A8B2279A59240028AFDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EB14A8B4279A59240028AFDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VertexShader/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.VertexShader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EB14A8B5279A59240028AFDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VertexShader/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.VertexShader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EB14A895279A59230028AFDF /* Build configuration list for PBXProject "VertexShader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB14A8B1279A59240028AFDF /* Debug */,
+				EB14A8B2279A59240028AFDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB14A8B3279A59240028AFDF /* Build configuration list for PBXNativeTarget "VertexShader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB14A8B4279A59240028AFDF /* Debug */,
+				EB14A8B5279A59240028AFDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EB14A892279A59230028AFDF /* Project object */;
+}

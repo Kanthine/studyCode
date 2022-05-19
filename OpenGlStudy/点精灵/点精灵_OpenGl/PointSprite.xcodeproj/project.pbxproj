@@ -1,0 +1,432 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EB67FA1D27B609E700C94AC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB67FA1C27B609E700C94AC6 /* AppDelegate.m */; };
+		EB67FA2327B609E700C94AC6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB67FA2227B609E700C94AC6 /* ViewController.m */; };
+		EB67FA2827B609E900C94AC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB67FA2727B609E900C94AC6 /* Assets.xcassets */; };
+		EB67FA2B27B609E900C94AC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB67FA2927B609E900C94AC6 /* LaunchScreen.storyboard */; };
+		EB67FA2E27B609E900C94AC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB67FA2D27B609E900C94AC6 /* main.m */; };
+		EB67FA4827B60AB300C94AC6 /* GLResourceManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = EB67FA3A27B60AB300C94AC6 /* GLResourceManager.mm */; };
+		EB67FA4927B60AB300C94AC6 /* GLMatrixState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB67FA3B27B60AB300C94AC6 /* GLMatrixState.cpp */; };
+		EB67FA4A27B60AB300C94AC6 /* GLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = EB67FA3D27B60AB300C94AC6 /* GLView.mm */; };
+		EB67FA4B27B60AB300C94AC6 /* GLRender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB67FA3E27B60AB300C94AC6 /* GLRender.cpp */; };
+		EB67FA4D27B60AB300C94AC6 /* VertexShader.sh in Resources */ = {isa = PBXBuildFile; fileRef = EB67FA4627B60AB300C94AC6 /* VertexShader.sh */; };
+		EB67FA4E27B60AB300C94AC6 /* FragmentShader.sh in Resources */ = {isa = PBXBuildFile; fileRef = EB67FA4727B60AB300C94AC6 /* FragmentShader.sh */; };
+		EB67FA5127B60BB000C94AC6 /* PointSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB67FA4F27B60BB000C94AC6 /* PointSprite.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EB67FA1827B609E700C94AC6 /* PointSprite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PointSprite.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB67FA1B27B609E700C94AC6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EB67FA1C27B609E700C94AC6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EB67FA2127B609E700C94AC6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EB67FA2227B609E700C94AC6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EB67FA2727B609E900C94AC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EB67FA2A27B609E900C94AC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EB67FA2C27B609E900C94AC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB67FA2D27B609E900C94AC6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EB67FA3627B60AB300C94AC6 /* GLMatrix.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GLMatrix.hpp; sourceTree = "<group>"; };
+		EB67FA3727B60AB300C94AC6 /* GLResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLResourceManager.h; sourceTree = "<group>"; };
+		EB67FA3827B60AB300C94AC6 /* ShaderTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderTool.h; sourceTree = "<group>"; };
+		EB67FA3927B60AB300C94AC6 /* GLMatrixState.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GLMatrixState.hpp; sourceTree = "<group>"; };
+		EB67FA3A27B60AB300C94AC6 /* GLResourceManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GLResourceManager.mm; sourceTree = "<group>"; };
+		EB67FA3B27B60AB300C94AC6 /* GLMatrixState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLMatrixState.cpp; sourceTree = "<group>"; };
+		EB67FA3D27B60AB300C94AC6 /* GLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GLView.mm; sourceTree = "<group>"; };
+		EB67FA3E27B60AB300C94AC6 /* GLRender.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLRender.cpp; sourceTree = "<group>"; };
+		EB67FA3F27B60AB300C94AC6 /* GLRender.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GLRender.hpp; sourceTree = "<group>"; };
+		EB67FA4027B60AB300C94AC6 /* GLRenderInterface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GLRenderInterface.hpp; sourceTree = "<group>"; };
+		EB67FA4127B60AB300C94AC6 /* GLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLView.h; sourceTree = "<group>"; };
+		EB67FA4627B60AB300C94AC6 /* VertexShader.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = VertexShader.sh; sourceTree = "<group>"; };
+		EB67FA4727B60AB300C94AC6 /* FragmentShader.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = FragmentShader.sh; sourceTree = "<group>"; };
+		EB67FA4F27B60BB000C94AC6 /* PointSprite.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PointSprite.cpp; sourceTree = "<group>"; };
+		EB67FA5027B60BB000C94AC6 /* PointSprite.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PointSprite.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EB67FA1527B609E700C94AC6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EB67FA0F27B609E700C94AC6 = {
+			isa = PBXGroup;
+			children = (
+				EB67FA3427B60AB300C94AC6 /* OpenGLEngine */,
+				EB67FA1A27B609E700C94AC6 /* PointSprite */,
+				EB67FA1927B609E700C94AC6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EB67FA1927B609E700C94AC6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB67FA1827B609E700C94AC6 /* PointSprite.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EB67FA1A27B609E700C94AC6 /* PointSprite */ = {
+			isa = PBXGroup;
+			children = (
+				EB67FA1B27B609E700C94AC6 /* AppDelegate.h */,
+				EB67FA1C27B609E700C94AC6 /* AppDelegate.m */,
+				EB67FA2127B609E700C94AC6 /* ViewController.h */,
+				EB67FA2227B609E700C94AC6 /* ViewController.m */,
+				EB67FA2727B609E900C94AC6 /* Assets.xcassets */,
+				EB67FA2927B609E900C94AC6 /* LaunchScreen.storyboard */,
+				EB67FA2C27B609E900C94AC6 /* Info.plist */,
+				EB67FA2D27B609E900C94AC6 /* main.m */,
+			);
+			path = PointSprite;
+			sourceTree = "<group>";
+		};
+		EB67FA3427B60AB300C94AC6 /* OpenGLEngine */ = {
+			isa = PBXGroup;
+			children = (
+				EB67FA3527B60AB300C94AC6 /* Unit */,
+				EB67FA3C27B60AB300C94AC6 /* Render */,
+				EB67FA4227B60AB300C94AC6 /* Model */,
+				EB67FA4527B60AB300C94AC6 /* Shader */,
+			);
+			path = OpenGLEngine;
+			sourceTree = "<group>";
+		};
+		EB67FA3527B60AB300C94AC6 /* Unit */ = {
+			isa = PBXGroup;
+			children = (
+				EB67FA3627B60AB300C94AC6 /* GLMatrix.hpp */,
+				EB67FA3B27B60AB300C94AC6 /* GLMatrixState.cpp */,
+				EB67FA3927B60AB300C94AC6 /* GLMatrixState.hpp */,
+				EB67FA3727B60AB300C94AC6 /* GLResourceManager.h */,
+				EB67FA3A27B60AB300C94AC6 /* GLResourceManager.mm */,
+				EB67FA3827B60AB300C94AC6 /* ShaderTool.h */,
+			);
+			path = Unit;
+			sourceTree = "<group>";
+		};
+		EB67FA3C27B60AB300C94AC6 /* Render */ = {
+			isa = PBXGroup;
+			children = (
+				EB67FA3E27B60AB300C94AC6 /* GLRender.cpp */,
+				EB67FA3F27B60AB300C94AC6 /* GLRender.hpp */,
+				EB67FA4027B60AB300C94AC6 /* GLRenderInterface.hpp */,
+				EB67FA4127B60AB300C94AC6 /* GLView.h */,
+				EB67FA3D27B60AB300C94AC6 /* GLView.mm */,
+			);
+			path = Render;
+			sourceTree = "<group>";
+		};
+		EB67FA4227B60AB300C94AC6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB67FA4F27B60BB000C94AC6 /* PointSprite.cpp */,
+				EB67FA5027B60BB000C94AC6 /* PointSprite.hpp */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EB67FA4527B60AB300C94AC6 /* Shader */ = {
+			isa = PBXGroup;
+			children = (
+				EB67FA4627B60AB300C94AC6 /* VertexShader.sh */,
+				EB67FA4727B60AB300C94AC6 /* FragmentShader.sh */,
+			);
+			path = Shader;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EB67FA1727B609E700C94AC6 /* PointSprite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB67FA3127B609E900C94AC6 /* Build configuration list for PBXNativeTarget "PointSprite" */;
+			buildPhases = (
+				EB67FA1427B609E700C94AC6 /* Sources */,
+				EB67FA1527B609E700C94AC6 /* Frameworks */,
+				EB67FA1627B609E700C94AC6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PointSprite;
+			productName = PointSprite;
+			productReference = EB67FA1827B609E700C94AC6 /* PointSprite.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EB67FA1027B609E700C94AC6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					EB67FA1727B609E700C94AC6 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = EB67FA1327B609E700C94AC6 /* Build configuration list for PBXProject "PointSprite" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EB67FA0F27B609E700C94AC6;
+			productRefGroup = EB67FA1927B609E700C94AC6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EB67FA1727B609E700C94AC6 /* PointSprite */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EB67FA1627B609E700C94AC6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB67FA2B27B609E900C94AC6 /* LaunchScreen.storyboard in Resources */,
+				EB67FA4E27B60AB300C94AC6 /* FragmentShader.sh in Resources */,
+				EB67FA4D27B60AB300C94AC6 /* VertexShader.sh in Resources */,
+				EB67FA2827B609E900C94AC6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EB67FA1427B609E700C94AC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB67FA5127B60BB000C94AC6 /* PointSprite.cpp in Sources */,
+				EB67FA2327B609E700C94AC6 /* ViewController.m in Sources */,
+				EB67FA4927B60AB300C94AC6 /* GLMatrixState.cpp in Sources */,
+				EB67FA1D27B609E700C94AC6 /* AppDelegate.m in Sources */,
+				EB67FA4B27B60AB300C94AC6 /* GLRender.cpp in Sources */,
+				EB67FA4A27B60AB300C94AC6 /* GLView.mm in Sources */,
+				EB67FA4827B60AB300C94AC6 /* GLResourceManager.mm in Sources */,
+				EB67FA2E27B609E900C94AC6 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EB67FA2927B609E900C94AC6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB67FA2A27B609E900C94AC6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EB67FA2F27B609E900C94AC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EB67FA3027B609E900C94AC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EB67FA3227B609E900C94AC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PointSprite/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PointSprite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EB67FA3327B609E900C94AC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PointSprite/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PointSprite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EB67FA1327B609E700C94AC6 /* Build configuration list for PBXProject "PointSprite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB67FA2F27B609E900C94AC6 /* Debug */,
+				EB67FA3027B609E900C94AC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB67FA3127B609E900C94AC6 /* Build configuration list for PBXNativeTarget "PointSprite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB67FA3227B609E900C94AC6 /* Debug */,
+				EB67FA3327B609E900C94AC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EB67FA1027B609E700C94AC6 /* Project object */;
+}
