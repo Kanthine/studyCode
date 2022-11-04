@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单·上传文件</title>
+    <style>
+        .box0 {
+            width: 25%;
+            margin: 20px auto;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box0">
+        上传文件
+        <div>
+            <input type="file">
+        </div>
+    </div>
+    <div class="box0">
+        上传图片
+        <div>
+            <form action="">
+                <input type="image" src="../img/clothes.png">
+            </form>
+        </div>
+    </div>
+
+    <!-- 使用 disabled 禁用 -->
+    <!-- 使用 readonly 只读 -->
+    <div class="box0">
+        <button disabled>提交</button> 
+        <br>
+        <input type="text" disabled value="你改不了">
+        <br>
+        <input type="text" readonly value="只读属性">
+    </div>
+
+
+</body>
+</html>
+ 

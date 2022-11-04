@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单·下拉菜单</title>
+    <style>
+        .box {
+            width: 25%;
+            margin: 20px auto;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        请选择城市
+        <div>
+            <!-- select 支持的属性： 
+                size 同时显示几个选项，默认仅显示一个
+                multiple 按着 control 键同时选择多个
+            -->
+            <select name="" id="" size="3" multiple>
+                <!-- option 的 value 值必须设置 
+                    selected 默认选中
+                -->
+                <option value="北京">北京</option>
+                <option value="上海" selected>上海</option>
+                <option value="广州">广州</option>
+                <option value="深圳">深圳</option>
+                <option value="天津">天津</option>
+            </select>
+        </div>
+    </div>
+</body>
+</html>
+ 

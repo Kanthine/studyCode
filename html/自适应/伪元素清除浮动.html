@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪元素清除浮动</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        div::first-letter {
+            font-size: 30px;
+            color: red;
+        }
+        div::first-line {
+            background-color: yellow;
+        }
+
+        .box1, .box2 {
+            width: 200px;
+            height: 200px;
+        }
+        .box1 {
+            background-color: red;
+            /* display: none;  */
+             /*  display: none;  不占位的隐藏*/
+
+             visibility: hidden;  /* 可见性：隐藏！ 占位隐藏 */
+
+        }
+        .box1::after {
+            content: "";
+            clear: both;
+            display: block;
+            width: 0px;
+            height: 0px;
+            visibility: hidden;  /* 可见性：隐藏！ 占位隐藏 */
+        }
+        .box2 {
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <div>大多数v吧三氯哪里都是吧fkjavl.ANVsbdf啊展示了从v的那部分但v撒的恐惧部分v啊看v就啊的是v上的v啊的健康板块受打击啊v白金卡的v尽快办实事大多数v吧三氯哪里都是吧fkjavl.ANVsbdf啊展示了从v的那部分但v撒的恐惧部分v啊看v就啊的是v上的v啊的健康板块受打击啊v白金卡的v尽快办实事大多数v吧三氯哪里都是吧fkjavl.ANVsbdf啊展示了从v的那部分但v撒的恐惧部分v啊看v就啊的是v上的v啊的健康板块受打击啊v白金卡的v尽快办实事</div>
+
+    <div class="box1"></div>
+    <div class="box2"></div>
+</html>
+ 

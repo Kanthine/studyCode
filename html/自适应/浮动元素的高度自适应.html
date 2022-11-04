@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宽高自适应</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .left, .right {
+            height: 100px;
+            width: 100px;
+            float: left;
+        }
+
+        .left {
+            background-color: red;
+        }
+        .right {
+            background-color: blue;
+        }
+        .content {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+
+        .box3 {
+            overflow: hidden;
+        }
+
+        .box4::after {
+            content: "";
+            clear: both;
+            display: block;
+            width: 0px;
+            height: 0px;
+            visibility: hidden;  /* 可见性：隐藏！ 占位隐藏 */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- box1 的高度不可能被称开，因为子盒子浮动，导致了 box1 的高度塌陷 -->
+    <!-- <div class="box1"> 
+        <div class="left"></div>
+        <div class="right"></div>
+    </div> -->
+
+    <!-- box2 新增一个标签解决高度塌陷，
+        在结构里增加了空的标签，不利于代码可读性，且降低了浏览器的性能  -->
+    <!-- <div class="box2"> 
+        <div class="left"></div>
+        <div class="right"></div>
+        <div style="clear:both"></div>
+    </div> -->
+
+    <!-- 将  box3 设置为溢出隐藏，但会截掉超出的文字-->
+    <!-- <div class="box3"> 
+        <div class="left"></div>
+        <div class="right">大多数v吧三氯哪里都是吧fkjavl.ANVsbdf啊展示了从v的那部分但v撒的恐惧部分v啊看v就啊的是v上的v啊的健康板块受打击啊v白金卡的v尽快办实事</div>
+    </div> -->
+
+    <!-- 终极大法：设置伪元素 -->
+    <div class="box4"> 
+        <div class="left"></div>
+        <div class="right">大多数v吧三氯哪里都是吧fkjavl.ANVsbdf啊展示了从v的那部分但v撒的恐惧部分v啊看v就啊的是v上的v啊的健康板块受打击啊v白金卡的v尽快办实事</div>
+    </div>
+
+    <div class="content"></div>
+</html>
+ 

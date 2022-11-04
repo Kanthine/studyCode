@@ -1,0 +1,43 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.box {
+    width: 300px;
+    margin: 0 auto;
+    list-style: none;
+}
+
+.box .item {
+    float: left;
+    width: 45%;
+    color: white;
+    text-align: center;
+    border-color: red;
+    border-width: 1px;
+    border-style: solid;
+    background-color: gray;
+}
+
+.box .item:hover {
+    background-color: blue;
+}
+
+.box .item:hover ul {
+    display: block;
+}
+
+.box .item ul{
+    display: none;
+    list-style: none;
+    background-color: white;
+}
+
+.box .item li{
+    color: black;
+}
+
+.box .item li:hover{
+    color: red;
+}

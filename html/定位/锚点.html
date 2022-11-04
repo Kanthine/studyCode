@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>锚点的实现</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+            position: fixed;
+            top: 100px;
+            right: 0px;
+        }
+        li {
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border: 1px solid red;
+        }
+
+        div {
+            height: 300px;
+            border: 3px solid blue;
+            text-align: center;
+        }
+        /* 锚点作用：页面不同区域的跳转，使用 a 链接
+                <a href="锚点名称"></a>
+                <div id="锚点名字"></div>
+         */
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#语文">语文</a></li>
+        <li><a href="#数学">数学</a></li>
+        <li><a href="#英语">英语</a></li>
+        <li><a href="#物理">物理</a></li>
+        <li><a href="#化学">化学</a></li>
+        <li><a href="#生物">生物</a></li>
+    </ul>
+    <div id="语文">语文</div>
+    <div id="数学">数学</div>
+    <div id="英语">英语</div>
+    <div id="物理">物理</div>
+    <div id="化学">化学</div>
+    <div id="生物">生物</div>
+</body>
+</html>
+ 

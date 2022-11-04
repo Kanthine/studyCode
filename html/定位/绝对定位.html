@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绝对定位: 父元素没有定位</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 200px;
+            height: 200px;
+        }
+        .box1 {
+            background-color: red;
+            position: absolute; /* 绝对定位、脱离当前的文档流，位置被空出来被别的元素占用；
+                                           相对于第一屏，页面滚动时，位置还是会变化 */
+            top: 100px;
+            right: 100px;
+        }
+        .box2 {
+            height: 500px;
+            background-color: blue;
+        }
+        .box3 {
+            height: 500px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+</html>
+ 

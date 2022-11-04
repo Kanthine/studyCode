@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单·单选框</title>
+    <style>
+        .box0 {
+            width: 25%;
+            margin: 20px auto;
+        }
+        .box {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <!--  checked="checked" 默认选中该单选框-->
+    <!-- name：相同的 name 表明是一组，只能单选 -->
+
+    <div class="box0">
+        评价
+        <div class="box">
+            <input type="radio" name="评价"> 非常好
+        </div>
+        <div class="box">
+            <input type="radio" name="评价"> 一般好
+        </div>
+        <div class="box">
+            <input type="radio" name="评价"> 一般
+        </div>
+        <div class="box">
+            <input type="radio" name="评价"> 非常一般
+        </div>
+        <div class="box">
+            <input type="radio" name="评价" disabled> 差
+        </div>
+    </div>
+    <div class="box0">
+        性别
+        <div class="box">
+            <input type="radio" name="性别" id="男" checked> <label for="女">男</label>
+        </div>
+        <div class="box">
+            <input type="radio" name="性别" id="女"> <label for="男">女</label>
+        </div>
+    </div>
+</body>
+</html>
+ 

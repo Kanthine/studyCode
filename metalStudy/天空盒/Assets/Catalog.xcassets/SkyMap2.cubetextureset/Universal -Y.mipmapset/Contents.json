@@ -1,0 +1,12 @@
+{
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "levels" : [
+    {
+      "filename" : "skycubemap_down.jpg",
+      "mipmap-level" : "base"
+    }
+  ]
+}

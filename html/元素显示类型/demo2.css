@@ -1,0 +1,164 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+ul {
+    list-style: none;
+}
+
+.common {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.header {
+    height: 200px;
+    /* background-color: yellow; */
+}
+
+.header .logo {
+    width: 30%;
+    height: 200px;
+    background-image: url(../img/4.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    float: left;
+}
+
+.header .right {
+    width: 50%;
+    height: 100%;
+    float: right;
+}
+
+.header .right ul{
+    margin-top: 8px;
+    width: 100%;
+    height: 44px;
+    line-height: 44px;
+    background-color: blue;
+}
+
+.header .right li{
+    float: left;
+    text-align: center;
+}
+
+.header .right li a{
+    border-right: 1px solid #888888;
+    text-align: center;
+    padding: 0 10px;
+    font-size: 13px;
+    color: white;
+}
+
+.header .right .last {
+    border: 0;
+    padding-right: 0;
+}
+
+.header .right .search{
+    width: 60%;
+    height: 30px;
+    float: right;
+    border: 1px solid black;
+}
+
+.header .right .search input{
+    border: 0px;
+    height: 100%;
+    outline: none;
+}
+
+.nav {
+    height: 54px;
+    line-height: 54px;
+    border-top: 1px solid black;
+    background-color: #888888;
+    color: blue;
+}
+
+
+.nav ul{
+    height: 100%;
+    line-height: 54px;
+}
+
+.nav li{
+    float: left;
+    text-align: center;
+}
+
+.nav li a{
+    text-align: center;
+    padding: 0 10px;
+    font-size: 13px;
+    color: white;
+}
+
+.nav .last {
+    padding-right: 0;
+}
+
+.banner {
+    background-image: url(../img/3.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 450px;
+}
+
+.list {
+    overflow: hidden;
+}
+
+.list .item {
+    margin-right: 1%;
+    margin-top: 1%;
+    width: 48%;
+    float: left;
+}
+
+
+.list .item img {
+    display: block;
+    width: 100%;
+}
+
+.list .item p {
+    margin-top: 0px;
+    text-align: center;
+    
+    height: 25px;
+    background-color: #F6F7F8;
+
+    /* 文本溢出之后以省略号显示 */
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.footer {
+    height: 206px;
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+.footer ul {
+    padding: 30px 0px;
+    overflow: hidden;
+    height: 84px;
+    line-height: 28px;
+}
+
+.footer li{
+    width: 33%;
+    float: left;
+    /* padding-left: 20px; */
+    /* text-align: center; */
+}
+
+.footer p {
+    display: block;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>粘性定位</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div { 
+            width: 200px;
+            height: 2000px;
+        }
+        .header {
+            height: 100px;
+            background-color: red;
+        }
+        .nav {
+            height: 50px;
+            background-color: blue;
+            position: sticky; /* 粘性定位：参与文档流的排版；当滚动至窗口指定位置，则停止不动 */
+            top: 10px;
+        }
+        .list {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="nav"></div>
+    <div class="list"></div>
+</body>
+</html>
+ 

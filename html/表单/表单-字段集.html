@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单·字段集</title>
+    <style>
+        .box {
+            width: 25%;
+            margin: 20px auto;
+            border: 1px solid red;
+        }
+        fieldset {
+            border: 2px solid red;
+        }
+        legend {
+            border: 2px solid red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <fieldset>
+            <legend>姓名</legend>
+            <input type="text" placeholder="请输入姓名">
+        </fieldset>
+
+        <fieldset>
+            <legend>性别</legend>
+            <input type="radio" name="性别" id="男"><label for="男">男</label>
+            <input type="radio" name="性别" id="女"><label for="女">女</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>身高</legend>
+            <input type="text">
+        </fieldset>
+
+        <fieldset>
+            <legend>兴趣爱好（多选）</legend>
+            <input type="checkbox" name="兴趣爱好" id="体育" checked> <label for="体育">体育</label><br>
+            <input type="checkbox" name="兴趣爱好" id="军事"> <label for="军事">军事</label><br>
+            <input type="checkbox" name="兴趣爱好" id="财经" checked> <label for="财经">财经</label><br>
+            <input type="checkbox" name="兴趣爱好" id="休闲"> <label for="休闲">休闲</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>籍贯</legend>
+            <legend>经历</legend>
+        </fieldset>
+    </div>
+</body>
+</html>
+ 

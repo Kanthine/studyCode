@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绝对定位: 相对于父元素</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: relative; /* 父元素不能使用默认定位 */
+            top: 100px;
+            left: 100px;
+        }
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute; /* 绝对定位、脱离当前的文档流，位置被空出来 */
+            top: 20px;
+            right: 20px;
+            z-index: -1;
+        }
+
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute; /* 父元素不能使用默认定位 */
+            top: 300px;
+            left: 500px;
+            z-index: 10;
+        }
+        .box4 {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            position: absolute; /* 绝对定位、脱离当前的文档流，位置被空出来 */
+            top: 330px;
+            left: 400px;
+        }
+
+        .box5 {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            position: absolute; /* 绝对定位、脱离当前的文档流，位置被空出来 */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>    
+
+    <div class="box3">兄弟1</div>    
+    <div class="box4">兄弟2</div>
+
+
+    <span class="box5"></span>
+
+</body>
+</html>
+ 
+<!-- 父子关系时，将子盒子的 z-index 设置为负值，可以当父盒子在上层显示  -->

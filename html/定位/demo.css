@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.boxTitle {
+    width: 50%;
+    margin: 0 auto;
+    overflow: hidden; 
+    color: white;
+    text-align: center;
+}
+
+.boxTitle p { 
+    color: blue;
+    position: sticky;
+    position: fixed;
+    position: absolute;
+    position: relative;
+    position: static;
+}
+
+.box1{
+    width: 50%;
+    margin: 0 auto;
+    overflow: hidden; 
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+p {
+    margin-top: 0px;
+    text-align: center;
+    
+    height: 25px;
+    background-color: #F6F7F8;
+
+    /* 文本溢出之后以省略号显示 */
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.div1 {
+    margin-right: 1%;
+    margin-top: 1%;
+    width: 48%;
+    float: left;
+}
+
+.div1:hover {
+    background-color: red;
+}
+
+.div1:hover p {
+    background-color: red;
+    color: white;
+}
+
+.box2{
+    width: 50%;
+    height: 500px;
+    margin: 0 auto;
+    color: white;
+    font-size: 20px;
+    text-indent: 2em;
+    /* clear: both; */
+    /* background-color: blue; */
+}
+
+.box3{
+    width: 280px;
+    height: 280px;
+    /* padding: 20px; */
+    margin: -10px auto 30px;
+    background-color: red;
+    /* border-width: 10px;
+    border-color: yellow;
+    border-style: double; */
+    overflow: hidden;
+}
+
+
+.box4{
+    width: 80px;
+    height: 80px;
+    padding: 20px;
+    margin: 50px auto 30px;
+    background-color: red;
+    border-width: 10px;
+    border-color: yellow;
+    border-style: solid;
+}
+
+body {
+    /* background-color: red; */
+    background-size: cover;
+    background-image: url(./img/3.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center; /* 20px 50px */
+}

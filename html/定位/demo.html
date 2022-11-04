@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo 1</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            background-color: green;
+            width: 50%;
+            margin: 0 auto;
+        }
+        .item {
+            width: 48%;
+            background-color: red;
+            margin-right: 1%;
+            margin-top: 1%;
+            float: left;
+            position: relative;
+        }
+        .item img {
+            display: block;
+            width: 100%;
+        }
+
+        .item p {
+            position: absolute;
+            width: 80%;
+            top: 10px;
+            left: 10%;
+            color: white;
+            display: none;
+        }
+        .item:hover p {
+            display: block;
+        }
+
+        .item:hover {
+            opacity: 0.8;
+        }
+
+        .item .add {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            left: 20px;
+            bottom: 20px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="item">
+            <img src="../img/clothes.png">
+            <img class="add" src="../img/add.png">
+            <p>我们要始终与人民风雨同舟、与人民心心相印，想人民之所想，行人民之所嘱，不断把人民对美好</p>
+        </div>
+        <div class="item">
+            <img src="../img/clothes.png">
+            <img class="add" src="../img/add.png">
+            <p>完善以宪法为核心的中国特色社会主义法律体系、扎实推进依法行政、严格公正司法、加快建设法治社会——我们要认真贯彻落实党的二十大作出的一系列战略部署，坚持全面依法治国</p>
+        </div>
+        <div class="item">
+            <img src="../img/clothes.png">
+            <img class="add" src="../img/add.png">
+            <p>第三个图片</p>
+        </div>
+    </div>
+</body>
+</html>
+ 

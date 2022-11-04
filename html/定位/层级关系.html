@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>层级关系</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+        }
+        .box1 {
+            background-color: red;
+        }
+        .box2 {
+            top: 100px;
+            left: 100px;
+            position: relative;
+            background-color: blue;
+            z-index: 3;
+        }
+        .box3 {
+            background-color: green;
+            position: relative;
+            z-index: 2;
+        }
+    </style> 
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+</html>
+
+<!-- 两个盒子都有定位且有相交部分时，默认后来者居上；
+    设置 z-index 越大，越靠近上层显示；设置的值越小，越靠近下层显示；
+    层级值 z-index 既可以设置正值、也可以设置负值；只关注最终值的大小；
+    如果没有设置定位，则 z-index 的设置毫无意义
+-->

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宽高自适应</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .box1 {
+            height: 30px;
+            width: auto;
+            padding-left: 100px;
+            background-color: red;
+        }
+        .box2 {
+            height: 30px;
+            width: 100%;
+            padding-left: 100px;
+            background-color: blue;
+        }
+
+        .header, .footer {
+            height: 100px;
+            background-color: green;
+        }
+
+        .body {
+            /* height: 100px; */
+            min-height: 30px; /* 东西特别少时，撑开一个最小高度 */
+            max-height: 300px;
+
+            min-width: 30px;
+            max-width: 300px;
+            
+            background-color: yellow;
+            overflow: hidden; /* 超过高度的内容隐藏 */
+        }
+
+        li {
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- 宽度自适应与宽度 100% 的区别：
+          宽度自适应：根据 padding 调整内容宽度
+          宽度 100% ：内容 100%，再加上 padding 会撑开页面
+        -->
+    <div class="box1"></div>
+    <div class="box2"></div>
+
+
+    <div class="header"></div>
+    <div class="body">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+        </ul>
+    </div>
+    <div class="footer"></div>
+
+</html>
+ 

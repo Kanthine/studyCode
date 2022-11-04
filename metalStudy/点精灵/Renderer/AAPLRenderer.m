@@ -1,166 +1,101 @@
 @import simd;
-@import ModelIO;
 @import MetalKit;
 
-#include <stdlib.h>
 #import "AAPLRenderer.h"
 #import "AAPLShaderTypes.h"
 
-static const NSUInteger kPointCount = 4;
-
-@interface AAPLRenderer ()
-
-{
+@implementation AAPLRenderer {
+    id<MTLDevice> _device;
+    id<MTLRenderPipelineState> _pipelineState;
     id<MTLCommandQueue> _commandQueue;
-    id <MTLRenderPipelineState> _fairyPipelineState;
-    id<MTLTexture> _fairyMap;
-    MTLRenderPassDescriptor *_finalRenderPassDescriptor;
     vector_float2 _viewportSize;
+
+    id<MTLTexture> _point_1_Map;
+    id<MTLTexture> _point_2_Map;
+    id<MTLTexture> _point_3_Map;
 }
 
-@property (nonatomic, nonnull) id<MTLBuffer> uniformsBuffer;
-@property (nonatomic, nonnull) id<MTLBuffer> lightsInfoBuffer;
-
-@end
-
-@implementation AAPLRenderer
-
-- (nonnull instancetype)initWithMetalKitView:(nonnull MTKView *)view {
+- (nonnull instancetype)initWithMetalKitView:(nonnull MTKView *)mtkView {
     self = [super init];
     if(self) {
-        view.delegate = self;
-        _device = view.device;
-        _view = view;
-        [self loadMetal];
-        [self loadScene];
+        NSError *error;
+
+        _device = mtkView.device;
+        id<MTLLibrary> defaultLibrary = [_device newDefaultLibrary];
+        id<MTLFunction> vertexFunction = [defaultLibrary newFunctionWithName:@"vertexShader"];
+        id<MTLFunction> fragmentFunction = [defaultLibrary newFunctionWithName:@"fragmentShader"];
+        MTLRenderPipelineDescriptor *pipelineStateDescriptor = [[MTLRenderPipelineDescriptor alloc] init];
+        pipelineStateDescriptor.label = @"Simple Pipeline";
+        pipelineStateDescriptor.vertexFunction = vertexFunction;
+        pipelineStateDescriptor.fragmentFunction = fragmentFunction;
+        pipelineStateDescriptor.colorAttachments[0].pixelFormat = mtkView.colorPixelFormat;
+
+        _pipelineState = [_device newRenderPipelineStateWithDescriptor:pipelineStateDescriptor
+                                                                 error:&error];
+        NSAssert(_pipelineState, @"Failed to create pipeline state: %@", error);
+        _commandQueue = [_device newCommandQueue];
+        
+        [self loadTexture];
     }
     return self;
 }
 
-- (void)loadMetal {
-    NSError* error;
-    id <MTLLibrary> shaderLibrary = [_device newDefaultLibrary];
-    NSAssert(shaderLibrary, @"Failed to load Metal shader library");
-        
-    _view.colorPixelFormat = MTLPixelFormatBGRA8Unorm_sRGB;
-
-    #pragma mark Fairy billboard render pipeline setup
-    {
-        id <MTLFunction> fairyVertexFunction = [shaderLibrary newFunctionWithName:@"vertexShaderFP"];
-        id <MTLFunction> fairyFragmentFunction = [shaderLibrary newFunctionWithName:@"fragmentShaderFP"];
-        
-        MTLRenderPipelineDescriptor *renderPipelineDescriptor = [MTLRenderPipelineDescriptor new];
-        
-        renderPipelineDescriptor.label = @"Fairy Drawing";
-        renderPipelineDescriptor.vertexDescriptor = nil;
-        renderPipelineDescriptor.vertexFunction = fairyVertexFunction;
-        renderPipelineDescriptor.fragmentFunction = fairyFragmentFunction;
-        renderPipelineDescriptor.colorAttachments[0].pixelFormat = _view.colorPixelFormat;
-        renderPipelineDescriptor.colorAttachments[0].blendingEnabled = YES;
-        renderPipelineDescriptor.colorAttachments[0].rgbBlendOperation = MTLBlendOperationAdd;
-        renderPipelineDescriptor.colorAttachments[0].alphaBlendOperation = MTLBlendOperationAdd;
-        renderPipelineDescriptor.colorAttachments[0].sourceRGBBlendFactor = MTLBlendFactorSourceAlpha;
-        renderPipelineDescriptor.colorAttachments[0].sourceAlphaBlendFactor = MTLBlendFactorSourceAlpha;
-        renderPipelineDescriptor.colorAttachments[0].destinationRGBBlendFactor = MTLBlendFactorOne;
-        renderPipelineDescriptor.colorAttachments[0].destinationAlphaBlendFactor = MTLBlendFactorOne;
-
-        _fairyPipelineState = [_device newRenderPipelineStateWithDescriptor:renderPipelineDescriptor
-                                                                      error:&error];
-        NSAssert(_fairyPipelineState, @"Failed to create fairy render pipeline state: %@", error);
-    }
+- (void)loadTexture {
+    MTKTextureLoader *textureLoader = [[MTKTextureLoader alloc] initWithDevice:_device];
+    NSDictionary *textureLoaderOptions = @{
+        MTKTextureLoaderOptionTextureUsage       : @(MTLTextureUsageShaderRead),
+        MTKTextureLoaderOptionTextureStorageMode : @(MTLStorageModePrivate),
+    };
+    NSError *error = nil;
     
-    // Create the command queue
-    _commandQueue = [_device newCommandQueue];    
-    _finalRenderPassDescriptor = [MTLRenderPassDescriptor new];
-    _finalRenderPassDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(0.0, 0.0, 0.0, 0.0);
-    _finalRenderPassDescriptor.colorAttachments[0].loadAction = MTLLoadActionClear;
-    _finalRenderPassDescriptor.colorAttachments[0].storeAction = MTLStoreActionStore;
-}
+    _point_1_Map = [textureLoader newTextureWithName:@"FairyMap" scaleFactor:1.0 bundle:nil options:textureLoaderOptions
+                                               error:&error];
+    _point_1_Map.label = @"FairyMap";
 
-- (void)loadScene {
-    [self loadAssets];
-    [self initFairData];
-}
-
-- (void)loadAssets {
-    #pragma mark Setup buffer with attributes for each point light/fairy
-    {
-        _lightsInfoBuffer = [_device newBufferWithLength:sizeof(vector_float2) * kPointCount options:0];
-        _lightsInfoBuffer.label = @"info: speed and color";
-        NSAssert(_lightsInfoBuffer, @"Could not create lights data buffer");
-    }
+    _point_2_Map = [textureLoader newTextureWithName:@"PointSprite" scaleFactor:1.0 bundle:nil options:textureLoaderOptions
+                                               error:&error];
+    _point_2_Map.label = @"PointSprite";
     
-    #pragma mark Load textures for non-mesh assets
-    {
-        MTKTextureLoader *textureLoader = [[MTKTextureLoader alloc] initWithDevice:_device];
-
-        NSDictionary *textureLoaderOptions =
-        @{
-          MTKTextureLoaderOptionTextureUsage       : @(MTLTextureUsageShaderRead),
-          MTKTextureLoaderOptionTextureStorageMode : @(MTLStorageModePrivate),
-          };
-
-        NSError *error = nil;
-        _fairyMap = [textureLoader newTextureWithName:@"PointSprite"
-                                          scaleFactor:1.0
-                                               bundle:nil
-                                              options:textureLoaderOptions
-                                                error:&error];
-
-        NSAssert(_fairyMap, @"Could not load fairy texture: %@", error);
-        _fairyMap.label = @"Fairy Map";
-    }
+    _point_3_Map = [textureLoader newTextureWithName:@"rectangle" scaleFactor:1.0 bundle:nil options:textureLoaderOptions
+                                               error:&error];
+    _point_3_Map.label = @"rectangle";
+    NSAssert(_point_1_Map && _point_2_Map && _point_3_Map, @"Could not load fairy texture: %@", error);
 }
 
-#pragma mark - 粒子状态设定
-
-- (void)initFairData {
-    vector_float2 *points = (vector_float2 *)[_lightsInfoBuffer contents];
-    float size = 100;
-    for(int i = 0; i < kPointCount; i++) {
-        points[i] = (vector_float2){size * i, size * i};
-    }
-}
-
-#pragma mark - MTKViewDelegate
-
-- (void)drawFairies:(nonnull id <MTLRenderCommandEncoder>)renderEncoder {
-    [renderEncoder pushDebugGroup:@"Draw Fairies"];
-    [renderEncoder setRenderPipelineState:_fairyPipelineState];
-    [renderEncoder setVertexBytes:&_viewportSize length:sizeof(vector_float2) atIndex:VertexInputViewport];
-    [renderEncoder setVertexBuffer:_lightsInfoBuffer offset:0 atIndex:VertexInputPoint];
-    [renderEncoder setFragmentTexture:_fairyMap atIndex:FragmentInputTexture];
-    [renderEncoder drawPrimitives:MTLPrimitiveTypePoint vertexStart:0 vertexCount:kPointCount];
-    [renderEncoder popDebugGroup];
-}
-
-- (void)drawInMTKView:(MTKView *)view  {
-    id <MTLCommandBuffer> commandBuffer = [_commandQueue commandBuffer];
-    commandBuffer.label = @"Lighting Commands";
-    id<MTLTexture> drawableTexture = _view.currentDrawable.texture;
-
-    if(drawableTexture) {
-        _finalRenderPassDescriptor.colorAttachments[0].texture = drawableTexture;
-        id<MTLRenderCommandEncoder> renderEncoder = [commandBuffer renderCommandEncoderWithDescriptor:_finalRenderPassDescriptor];
-        renderEncoder.label = @"Lighting & Composition Pass";
-        [self drawFairies:renderEncoder];
-        [renderEncoder endEncoding];
-    }
-    
-    id<MTLDrawable> currentDrawable = _view.currentDrawable;
-    [commandBuffer addScheduledHandler:^(id<MTLCommandBuffer> _Nonnull commandBuffer) {
-        [currentDrawable present];
-    }];
-    [commandBuffer commit];
-}
-
-- (void)mtkView:(MTKView *)view drawableSizeWillChange:(CGSize)size {
+- (void)mtkView:(nonnull MTKView *)view drawableSizeWillChange:(CGSize)size {
     _viewportSize.x = size.width;
     _viewportSize.y = size.height;
+}
+
+- (void)drawInMTKView:(nonnull MTKView *)view {
     
-    if(view.paused) {
-        [view draw];
+    float sacle_1 = _point_1_Map.width / (float)(_point_1_Map.height);
+    float sacle_2 = _point_2_Map.width / (float)(_point_2_Map.height);
+    float sacle_3 = _point_3_Map.width / (float)(_point_3_Map.height);
+    vector_float4 points[] = {
+        { 0.1, 0.1, sacle_1, 1 },
+        { 0.5, 0.5, sacle_3, 3 },
+        { 0.9, 0.9, sacle_2, 2 },
+    };
+    
+    id<MTLCommandBuffer> commandBuffer = [_commandQueue commandBuffer];
+    commandBuffer.label = @"MyCommand";
+    MTLRenderPassDescriptor *renderPassDescriptor = view.currentRenderPassDescriptor;
+
+    if(renderPassDescriptor != nil) {
+        id<MTLRenderCommandEncoder> renderEncoder = [commandBuffer renderCommandEncoderWithDescriptor:renderPassDescriptor];
+        renderEncoder.label = @"MyRenderEncoder";
+        [renderEncoder setRenderPipelineState:_pipelineState];
+        [renderEncoder setViewport:(MTLViewport){0.0, 0.0, _viewportSize.x, _viewportSize.y, 0.0, 1.0 }];
+        [renderEncoder setVertexBytes:points length:sizeof(points) atIndex:VertexInputPoint];
+        [renderEncoder setFragmentTexture:_point_1_Map atIndex:FragmentInputTexture_1];
+        [renderEncoder setFragmentTexture:_point_2_Map atIndex:FragmentInputTexture_2];
+        [renderEncoder setFragmentTexture:_point_3_Map atIndex:FragmentInputTexture_3];
+        [renderEncoder drawPrimitives:MTLPrimitiveTypePoint vertexStart:0 vertexCount:3];
+        [renderEncoder endEncoding];
+        [commandBuffer presentDrawable:view.currentDrawable];
     }
+    [commandBuffer commit];
 }
 
 @end

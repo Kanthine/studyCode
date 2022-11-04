@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绝对定位: 相对于父元素</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: relative; /* 父元素不能使用默认定位 */
+            top: 100px;
+            left: 100px;
+        }
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute; /* 绝对定位、脱离当前的文档流，位置被空出来 */
+            top: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>    
+</body>
+</html>
+ 
