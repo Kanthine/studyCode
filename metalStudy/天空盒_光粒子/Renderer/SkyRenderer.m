@@ -11,10 +11,7 @@
 #import "AAPLMathUtilities.h"
 
 static const NSUInteger AAPLNumLights = 256;
-// 30% of lights are around the tree
-// 40% of lights are on the ground inside the columns
-// 30% of lights are around the outside of the columns
-static const NSUInteger AAPLTreeLights   = 0                 + 0.30 * AAPLNumLights;
+static const NSUInteger AAPLTreeLights   = 0    + 0.30 * AAPLNumLights;
 static const NSUInteger AAPLGroundLights = AAPLTreeLights    + 0.40 * AAPLNumLights;
 static const NSUInteger AAPLColumnLights = AAPLGroundLights  + 0.30 * AAPLNumLights;
 
@@ -180,7 +177,7 @@ static const NSUInteger AAPLColumnLights = AAPLGroundLights  + 0.30 * AAPLNumLig
 - (void)initLights {
     AAPLPointLight *light_data = (AAPLPointLight*)[_lightsData contents];
 
-    NSMutableData * originalLightPositions =  [[NSMutableData alloc] initWithLength:_lightPosition.length];
+    NSMutableData *originalLightPositions =  [[NSMutableData alloc] initWithLength:_lightPosition.length];
 
     _originalLightPositions = originalLightPositions;
 
@@ -188,30 +185,24 @@ static const NSUInteger AAPLColumnLights = AAPLGroundLights  + 0.30 * AAPLNumLig
 
     srandom(0x134e5348);
 
-    for(NSUInteger lightId = 0; lightId < AAPLNumLights; lightId++)
-    {
+    for(NSUInteger lightId = 0; lightId < AAPLNumLights; lightId++) {
         float distance = 0;
         float height = 0;
         float angle = 0;
         float speed = 0;
 
-        if(lightId < AAPLTreeLights)
-        {
+        if(lightId < AAPLTreeLights) {
             distance = random_float(38,42);
             height = random_float(0,1);
             angle = random_float(0, M_PI*2);
             speed = random_float(0.003,0.014);
-        }
-        else if(lightId < AAPLGroundLights)
-        {
+        } else if(lightId < AAPLGroundLights) {
             distance = random_float(140,260);
             height = random_float(140,150);
             angle = random_float(0, M_PI*2);
             speed = random_float(0.006,0.027);
             speed *= (random()%2)*2-1;
-        }
-        else if(lightId < AAPLColumnLights)
-        {
+        } else if(lightId < AAPLColumnLights) {
             distance = random_float(365,380);
             height = random_float(150,190);
             angle = random_float(0, M_PI*2);

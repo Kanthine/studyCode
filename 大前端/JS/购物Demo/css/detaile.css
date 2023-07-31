@@ -1,0 +1,35 @@
+div.content {
+    width: 90%;
+    display: flex;
+    margin: 20px auto;
+}
+
+div.content > .show {
+    width: 500px;
+    border: 1px solid red;
+}
+
+div.content > .info {
+    flex: 1;
+    box-sizing: border-box;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+div.content > .info > .title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+div.content > .info > .price {
+    font-size: 30px;
+    color: red;
+}
+
+div.content > .info > button {
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+}

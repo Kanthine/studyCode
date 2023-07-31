@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单·多选框</title>
+    <style>
+        .box0 {
+            width: 25%;
+            margin: 20px auto;
+        }
+        .box {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <!--  checked="checked" 默认选中该单选框-->
+    <div class="box0">
+        兴趣爱好（多选）<input type="checkbox" name="全选" id="全选"> <label for="体育">全选</label>
+        <div class="box">
+            <input type="checkbox" name="兴趣爱好" id="体育" checked> <label for="体育">体育</label>
+        </div>
+        <div class="box">
+            <input type="checkbox" name="兴趣爱好" id="军事"> <label for="军事">军事</label>
+        </div>
+        <div class="box">
+            <input type="checkbox" name="兴趣爱好" id="财经" checked> <label for="财经">财经</label>
+        </div>
+        <div class="box">
+            <input type="checkbox" name="兴趣爱好" id="休闲"> <label for="休闲">休闲</label>
+        </div>
+    </div>
+    <script>
+        let perSel = document.querySelectorAll('input')
+        let allSel = perSel[0]
+
+        allSel.onclick = function() {
+            var type = allSel.checked
+            for (let index = 1; index < perSel.length; index++) {
+                const element = perSel[index];
+                element.checked = type;
+            }
+        }
+
+        for (let index = 1; index < perSel.length; index++) {
+            const element = perSel[index];
+            element.onclick = function() {
+                var type = true
+                for (let index = 1; index < perSel.length; index++) {
+                    const element = perSel[index];
+                    type = type && element.checked;
+                }
+                allSel.checked = type
+            }
+        }
+    </script>
+</body>
+</html>
+ 

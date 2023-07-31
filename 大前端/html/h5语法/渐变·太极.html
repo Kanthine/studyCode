@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3渐变Demo·太极</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        @keyframes xuanzhuan {
+            frome {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        body {
+            background-color: lightgray;
+        }
+        div {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+        }
+        .box1 {
+            background: linear-gradient(white 50%, black 50%);
+            display: flex;
+            align-items: center;
+            border-radius: 50%;
+            animation: xuanzhuan 2s linear infinite;
+        }
+        .box1::before {
+            content: '';
+            width: 100px;
+            height: 100px;
+            background: -webkit-radial-gradient(white 25%, black 25%);
+            display: block;
+            border-radius: 50%;
+        }
+        .box1::after {
+            content: '';
+            width: 100px;
+            height: 100px;
+            background: -webkit-radial-gradient(black 25%, white 25%);
+            display: block;
+            border-radius: 50%;
+        }
+
+
+
+
+        /* .box1:hover {
+            transform: rotate(3600deg);
+        } */
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>
+ 

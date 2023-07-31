@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery·操作元素</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        .show {
+            height: 20px;
+            width: 20px;
+            border: 2px solid red;
+        }
+        .hide {
+            height: 20px;
+            width: 20px;
+            border: 2px solid blue;
+        }
+
+        .box1 {
+            height: 100px;
+            width: 100px;
+            border: 2px solid red;
+
+            
+        }
+    </style>
+</head>
+<body>
+
+    <div class="show"></div>
+    <div class="hide"></div>
+    <div class="box1"></div>
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        // $('.show').click(()=>{
+        //     $('.box1').animate({
+        //         width: '300px',
+        //         height: '300px',
+        //         opacity: '0.5',
+        //     }, 2000, 'linear', function(){
+        //        console.log('动画结束') 
+        //     })
+        // })
+
+
+        function register(info) {
+            $.ajax({
+                url: 'https://www.badu.com',
+                method: 'POST',
+                async: true,
+                data:info,
+                success: function(response){
+                    console.log('success', response)
+                },
+                error: function(error) {
+                    console.log('error', error)
+                }
+            })
+        }
+        register({name:'张三', age: 18, sex: false})
+    </script>
+</body>
+</html>
+ 
+<!-- 
+   jquery 简介 https://www.w3school.com.cn/jquery/jquery_intro.asp
+ -->

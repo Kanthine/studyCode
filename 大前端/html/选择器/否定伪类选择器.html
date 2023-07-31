@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>否定·伪类选择器</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 不是第一个标签 */
+        li:not(:first-child) { 
+            background-color: red;
+        }
+
+        li:not(:nth-child(3n)) {
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+</body>
+</html>
+ 

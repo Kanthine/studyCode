@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过度属性</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+        }
+
+        .box1 {
+            background: linear-gradient(to top right, red, blue, yellow, black);
+            transition: all 2s linear 1s;
+            /* all 所有属性
+               2s 动画持续时间 
+               linear 线性动画
+               ease 减速动画
+               ease-in 加速
+               ease-out 减速
+               ease-in-out 先加速后减速
+               1s 动画延迟执行时间
+               除了 display：none 属性
+             */
+        }
+        .box1:hover {
+            width: 600px;
+            height: 600px;
+        }
+
+        .box2 ul {
+            height: 0px;
+            transition: height 2s ease-in-out;
+            overflow: hidden;
+        }
+
+        .box2:hover ul {
+            height: 200px;
+        }
+        
+        .box3 {
+            width: 700px;
+        }
+        .box3 li {
+            width: 200px;
+            border: 1px solid red;
+        }
+
+        .box3:hover li:nth-child(1) {
+            width: 700px;
+            transition: width 2s linear;
+        }
+        .box3:hover li:nth-child(2) {
+            width: 700px;
+            transition: width 2s ease;
+        }
+        .box3:hover li:nth-child(3) {
+            width: 700px;
+            transition: width 2s ease-in;
+        }
+        .box3:hover li:nth-child(4) {
+            width: 700px;
+            transition: width 2s ease-out;
+        }
+        .box3:hover li:nth-child(5) {
+            width: 700px;
+            transition: width 2s ease-in-out;
+        }
+        .box3:hover li:nth-child(6) {
+            width: 700px;
+            transition-property: width;
+            transition-duration: 2s;
+            transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+            transition-delay: 0s;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"> 点击出现
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+    <div class="box3"> 动画对比
+        <ul>
+            <li>linear</li>
+            <li>ease</li>
+            <li>ease-in</li>
+            <li>ease-out</li>
+            <li>ease-in-out</li>
+            <li>cubic-bezier</li>
+        </ul>
+    </div>
+</body>
+</html>
+ 

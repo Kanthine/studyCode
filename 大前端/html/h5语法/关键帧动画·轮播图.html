@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关键帧动画·轮播图</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .swiper-container {
+            width: 300px;
+            height: 300px;
+            margin: 20px auto;
+            border: 1px solid red;
+            overflow: hidden;
+        }
+
+        @keyframes lunbo {
+            0% {
+                transform: translateX(0);
+            }
+
+            /* 第二张 */
+            10% {
+                transform: translateX(-300px);
+            }
+            25% { 
+                transform: translateX(-300px);
+            }
+
+            /* 第三张 */
+            35% {
+                transform: translateX(-600px);
+            }
+            50% {
+                transform: translateX(-600px);
+            }
+
+            /* 第四张 */
+            60% {
+                transform: translateX(-900px);
+            }
+            75% {
+                transform: translateX(-900px);
+            }
+
+            /* 第五张 */
+            85% {
+                transform: translateX(-1200px);
+            }
+            100% {
+                transform: translateX(-1200px);
+            }
+        }
+ 
+        .swiper-wrapper {
+            display: flex;
+            width: 1500px;
+            animation: lunbo 5s linear infinite;
+        }
+
+        .swiper-slide {
+            width: 300px;
+            padding: 0px 10px;
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 100%;
+        }
+        p {
+            width: 100%;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="../img/3.png" alt="">
+                <p>第一张图片</p>
+            </div>
+            <div class="swiper-slide">
+                <img src="../img/3.png" alt="">
+                <p>第二张图片</p>
+            </div>
+            <div class="swiper-slide">
+                <img src="../img/3.png" alt="">
+                <p>第三张图片</p>
+            </div>
+            <div class="swiper-slide">
+                <img src="../img/3.png" alt="">
+                <p>第四张图片</p>
+            </div>
+            <!-- 最后一份与第一份相同 -->
+            <div class="swiper-slide">
+                <img src="../img/3.png" alt="">
+                <p>第一张图片</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+ 

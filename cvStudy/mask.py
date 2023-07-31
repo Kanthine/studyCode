@@ -1,7 +1,7 @@
 # mask 
 import cv2
 
-img = cv2.imread("./img/mask.png")  
+img = cv2.imread("./img/time.png")  
 # 灰度化
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 # 椭圆卷积核

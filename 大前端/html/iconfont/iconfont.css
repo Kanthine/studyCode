@@ -1,0 +1,83 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3761607 */
+  src: url('iconfont.woff2?t=1668045066268') format('woff2'),
+       url('iconfont.woff?t=1668045066268') format('woff'),
+       url('iconfont.ttf?t=1668045066268') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-banquan:before {
+  content: "\e98b";
+}
+
+.icon-anquanyinsi:before {
+  content: "\e98e";
+}
+
+.icon-dicengjiagou:before {
+  content: "\e98f";
+}
+
+.icon-cangchucangku:before {
+  content: "\e990";
+}
+
+.icon-fapiao:before {
+  content: "\e993";
+}
+
+.icon-dingdan:before {
+  content: "\e994";
+}
+
+.icon-fuwuqi:before {
+  content: "\e995";
+}
+
+.icon-maijiagouwuche:before {
+  content: "\e996";
+}
+
+.icon-maijiadianpu:before {
+  content: "\e997";
+}
+
+.icon-guanli:before {
+  content: "\e998";
+}
+
+.icon-piaoju:before {
+  content: "\e999";
+}
+
+.icon-shijianchuo:before {
+  content: "\e99a";
+}
+
+.icon-tupian:before {
+  content: "\e99b";
+}
+
+.icon-tiaoxingma:before {
+  content: "\e99c";
+}
+
+.icon-user:before {
+  content: "\e99e";
+}
+
+.icon-chayan:before {
+  content: "\e98c";
+}
+
+.icon-erweima:before {
+  content: "\e98d";
+}
+

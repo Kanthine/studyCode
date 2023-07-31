@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性盒模型·主轴·侧轴对其方式</title>
+    <style>
+        .box1 {
+            width: 500px;
+            height: 500px;
+            margin: 20px auto;
+            border: 1px solid red;
+
+            /* 将盒子设置为弹性盒子 
+             * 弹性盒子的子元素如 span 将由行内元素变为块元素
+             * 默认主轴横向排列、侧轴竖直排列
+            */
+            display: flex;
+
+            /* 主轴方向 */
+            flex-direction: row;
+
+            /* 主轴对齐方式 
+            * space-between 两端对齐
+            * space-around 距离环绕
+            */
+            justify-content: space-around;
+
+            /* 侧轴对齐方式
+             */
+            align-items: center;
+        }
+
+        .box1 div {
+            /* 在弹性盒子内部水平、垂直居中显示 */
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border: 1px dashed blue;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+</body>
+</html>

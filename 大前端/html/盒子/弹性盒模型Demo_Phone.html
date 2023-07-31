@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性盒模型·Phone_Demo</title>
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .box {
+            width: 955px;
+            height: 1420px;
+            margin: 0 auto;
+            background-color: gray;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            height: 124px;
+            background-color: blue;
+            display: flex;
+
+        }
+
+        header i.iconfont {
+            width: 118px;
+            height: 124px;
+            line-height: 124px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            font-size: 48px;
+        }
+
+        header span {
+            flex: 1;
+            height: 124px;
+            line-height: 124px;
+            font-size: 40px;
+            color: white;
+        }
+
+        section {
+            flex: 1;
+        }
+        .main {
+            display: flex;
+            height: 278px;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .main div {
+            width: 120px;
+            height: 168px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main div i.iconfont {
+            color: white;
+            font-size: 110px;
+        }
+
+        .main div span {
+            font-size: 32px;
+            color: white;
+        }
+
+        .list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .list .item {
+            width: 25%;
+            height: 208px;
+            border: 1px solid black;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .list .item i.iconfont {
+            color: white;
+            font-size: 80px;
+        }
+
+        .list .item span {
+            font-size: 26px;
+            color: white;
+        }
+
+        section img {
+            flex: 1;
+            margin-top: 25px;
+        }
+
+        footer {
+            height: 128px;
+            display: flex;
+            flex-direction: row;
+        }
+        footer .item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        footer .item i.iconfont {
+            color: white;
+            font-size: 60px;
+        }
+        footer .item span {
+            font-size: 26px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <header>
+            <i class="iconfont icon-cangchucangku"></i>
+            <span>账单</span>
+            <i class="iconfont icon-erweima"></i>
+            <i class="iconfont icon-erweima"></i>
+            <i class="iconfont icon-user"></i>
+        </header>
+        <section>
+            <div class="main">
+                <div>
+                    <i class="iconfont icon-erweima"></i>
+                    <span>扫一扫</span>
+                </div>
+                <div>
+                    <i class="iconfont icon-erweima"></i>
+                    <span>扫一扫</span>
+                </div>
+                <div>
+                    <i class="iconfont icon-erweima"></i>
+                    <span>扫一扫</span>
+                </div>
+                <div>
+                    <i class="iconfont icon-erweima"></i>
+                    <span>扫一扫</span>
+                </div>
+            </div>
+            <div class="list">
+                <div class="item">
+                    <i class="iconfont icon-erweima"></i>
+                    <span>扫一扫</span>
+                </div>
+                <div class="item">
+                    <i class="iconfont icon-erweima"></i>
+                    <span>扫一扫</span>
+                </div>
+                <div class="item">
+                    <i class="iconfont icon-erweima"></i>
+                    <span>扫一扫</span>
+                </div>
+                <div class="item">
+                    <i class="iconfont icon-erweima"></i>
+                    <span>扫一扫</span>
+                </div>
+                <div class="item">
+                    <i class="iconfont icon-erweima"></i>
+                    <span>扫一扫</span>
+                </div>
+                <div class="item">
+                    <i class="iconfont icon-erweima"></i>
+                    <span>扫一扫</span>
+                </div>
+                <div class="item">
+                    <i class="iconfont icon-erweima"></i>
+                    <span>扫一扫</span>
+                </div>
+                <div class="item">
+                    <i class="iconfont icon-erweima"></i>
+                    <span>扫一扫</span>
+                </div>
+                <div class="item">
+                    <i class="iconfont icon-erweima"></i>
+                    <span>扫一扫</span>
+                </div>
+                <div class="item">
+                    <i class="iconfont icon-erweima"></i>
+                    <span>扫一扫</span>
+                </div>
+                <div class="item">
+                    <i class="iconfont icon-erweima"></i>
+                    <span>扫一扫</span>
+                </div>
+                <div class="item">
+                    <i class="iconfont icon-erweima"></i>
+                    <span>扫一扫</span>
+                </div>
+            </div>
+            <img src="../img/3.png" alt="">
+        </section>
+        <footer>
+            <div class="item">
+                <i class="iconfont icon-user"></i>
+                <span>我的</span>
+            </div>
+            <div class="item">
+                <i class="iconfont icon-user"></i>
+                <span>我的</span>
+            </div>
+            <div class="item">
+                <i class="iconfont icon-user"></i>
+                <span>我的</span>
+            </div>
+            <div class="item">
+                <i class="iconfont icon-user"></i>
+                <span>我的</span>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

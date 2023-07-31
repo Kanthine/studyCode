@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H5语法·语义化</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        html, body {
+            height: 100%;
+        }
+        header, footer{
+            height: 100px;
+            background-color: red;
+        }
+        section {
+            height: calc(100% - 100px - 100px);
+            background-color: black;
+        }
+        nav, aside {
+            height: 100%;
+            width: 100px;
+            background-color: blue;
+            float: left;
+            overflow: hidden;
+        }
+        main {
+            height: 100%;
+            width: calc(100% - 100px - 100px);
+            background-color: yellow;
+            float: left;
+        }
+        .des {
+            color: white;
+        }
+
+        .content1 header{
+            height: auto;
+            background-color: #EEEEEE;
+        }
+        .content1 footer{
+            height: auto;
+        }
+
+        .content1 {
+            height: 60%;
+            background-color: yellow;
+        }
+
+        .content2 {
+            height: 40%;
+            background-color: #AAAAAA;
+        }
+
+        .content2 header{
+            height: auto;
+            background-color: #BBBBBB;
+        }
+        .content2 footer{
+            height: auto;
+            background-color: #888888;
+        }
+
+    </style>
+</head>
+<body>
+  <header></header>
+  <section>
+    <nav>
+        <figure>导航栏</figure>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </nav>
+    <main>
+        <article class="content1">
+            <header>article header</header>
+            <p>
+                afghans了那肯定不能看；两三年；快乐更快乐； 你上课了；告诉你快乐；你不快乐；是你快乐；是你疯狂了吧你说离开了百事可乐栗色日本
+                fghans了那肯定不能看；两三年；快乐更快乐； 你上课了；告诉你快乐；你不快乐；是你快乐；是你疯狂了吧你说离开了百事可乐栗色日
+                fghans了那肯定不能看；两三年；快乐更快乐； 你上课了；告诉你快乐；你不快乐；是你快乐；是你疯狂了吧你说离开了百事可乐栗色日
+            </p>
+            <footer>article footer</footer>
+        </article>
+        <article class="content2">
+            <header>article header</header>
+            <p>
+                afghans了那肯定不能看；两三年；快乐更快乐； 你上课了；告诉你快乐；你不快乐；是你快乐；是你疯狂了吧你说离开了百事可乐栗色日本
+                fghans了那肯定不能看；两三年；快乐更快乐； 你上课了；告诉你快乐；你不快乐；是你快乐；是你疯狂了吧你说离开了百事可乐栗色日
+                fghans了那肯定不能看；两三年；快乐更快乐； 你上课了；告诉你快乐；你不快乐；是你快乐；是你疯狂了吧你说离开了百事可乐栗色日
+            </p>
+            <footer>article footer</footer>
+        </article>
+    </main>
+    <aside>
+        <figure>内容说明</figure>
+        <p class="des">
+            afghans了那肯定不能看；两三年；快乐更快乐； 你上课了；告诉你快乐；你不快乐；是你快乐；是你疯狂了吧你说离开了百事可乐栗色日本
+            fghans了那肯定不能看；两三年；快乐更快乐； 你上课了；告诉你快乐；你不快乐；是你快乐；是你疯狂了吧你说离开了百事可乐栗色日
+            fghans了那肯定不能看；两三年；快乐更快乐； 你上课了；告诉你快乐；你不快乐；是你快乐；是你疯狂了吧你说离开了百事可乐栗色日
+        </p>
+    </aside>
+  </section>
+  <footer></footer>
+</body>
+</html>
+ 

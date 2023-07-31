@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI状态·伪类选择器</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 非禁用状态 */
+        input:enabled {
+            background-color: red;
+        }
+
+        /* 禁用状态 */
+        input:disabled {
+            background-color: blue;
+        }
+
+        /* 处于焦点的 input 标签 */
+        input:focus {
+            background-color: yellow;
+        }
+
+        input[type=checkbox] {
+            /* 清除默认样式 */
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background-color: transparent;
+            border: 2px solid black;
+        }
+        /* 勾选样式 */
+        input:checked {
+            background-color: green;
+        }
+
+        /* 选中之后的样式 */
+        p::selection {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        用户名 <input type="text"> <br>
+        密码 <input type="password"> <br>
+        存储信息 <input type="checkbox"> <br>
+        <input type="submit" disabled>
+    </form>
+
+    <p>立冬，是二十四节气之第十九个节气，也是冬季的起始。斗柄指向西北，太阳黄经达225°，于每年公历11月7-8日之间交节。立，建始也；冬，终也，万物收藏也。立冬，意味着生气开始闭蓄，万物进入休养、收藏状态。其气候也由秋季少雨干燥向阴雨寒冻的冬季气候过渡...
+    </p>
+
+</body>
+</html>
+ 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关键帧动画·step</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        @keyframes gifAnimation {
+            0% {
+                background-color: red;
+            }
+            50% {
+                background-color: blue;
+            }
+            100% {
+                background-color: yellow;
+            }
+        }
+
+        .gif {
+            width: 300px;
+            height: 300px;
+            margin: 20px auto;
+            border: 1px solid red;
+
+            /* steps(2, end)
+             * 动画两个进度之间插入 2 帧作为过渡；
+             * end 保留当前帧，看不到最后一帧，动画结束
+             * start 保留下一帧，看不到第一帧，从第一帧很快跳到最后一帧
+             */
+            animation: gifAnimation 5s steps(1, start) infinite;
+        }        
+
+    </style>
+</head>
+<body>
+    <div class="gif">
+    </div>
+</body>
+</html>
+ 

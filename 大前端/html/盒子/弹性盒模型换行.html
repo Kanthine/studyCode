@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性盒模型·换行</title>
+    <style>
+        .box1 {
+            width: 500px;
+            height: 500px;
+            margin: 20px auto;
+            border: 1px solid red;
+
+            /* 将盒子设置为弹性盒子 
+             * 弹性盒子的子元素如 span 将由行内元素变为块元素
+             * 默认主轴横向排列、侧轴竖直排列
+            */
+            display: flex;
+
+            /* 换行显示 */
+            flex-wrap: wrap;
+        }
+
+        .box1 div {
+            /* 在弹性盒子内部水平、垂直居中显示 */
+            margin: auto;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border: 1px dashed blue;
+            text-align: center;
+        }
+
+        .box2 {
+            width: 500px;
+            height: 500px;
+            margin: 20px auto;
+            border: 1px solid red;
+
+            display: flex;
+            flex-direction: column-reverse;
+            flex-wrap: wrap;
+            /* 控制换行后的间距 */
+            align-content: flex-start;
+        }
+
+        .box2 span {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border: 1px dashed blue;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+    </div>
+
+    <div class="box2">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+        <span>7</span>
+        <span>8</span>
+        <span>9</span>
+        <span>10</span>
+        <span>11</span>
+    </div>
+</body>
+</html>

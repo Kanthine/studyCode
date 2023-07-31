@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D属性transform</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        div {
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+        }
+
+        .box1 {
+            background: linear-gradient(to top right, red, blue, yellow, black);
+            transition: all 2s linear;
+        }
+        .box1:hover {
+            /* width: 300px;
+            height: 300px; */
+            transform: translateX(300px) translateY(300px) translateZ(300px) scaleX(0.5) scaleY(0.1);
+        }
+
+        .box2 {
+            background-color: blue;
+            transform-origin: top left;
+            transition-duration: 2s;
+            transition-timing-function: linear;
+            transition-property: all;
+        }
+        .box2:hover {
+            transform: scale(2.0)
+        }
+
+        .box3 {
+            background-color: red;
+            transform-origin: center;
+            transition-duration: 2s;
+            transition-timing-function: linear;
+            transition-property: all;
+        }
+        .box3:hover {
+            transform: scale(2.0)
+        }
+
+        .box4 {
+            background-color: red;
+            transform-origin: center;
+            transition-duration: 2s;
+            transition-timing-function: linear;
+            transition-property: all;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1">X轴位移</div>
+    <div class="box2">中心点缩放</div>
+    <div class="box3">原点缩放</div>
+</body>
+</html>
+ 

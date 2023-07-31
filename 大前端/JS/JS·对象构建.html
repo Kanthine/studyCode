@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS·对象的几种构建方法</title>
+</head>
+<body>
+
+    <script>
+        // 方式一：字面量创建对象
+        var obj1 = {
+            name: '张三',
+            age: 18,
+            sex: true,
+            eat:function(food){console.log(food)}
+        }
+        obj1.eat('西瓜')
+
+        // 方式二：内置构造函数创建对象
+        var obj2 = new Object()
+        obj2.name = '李四'
+        obj2.age = 28
+        obj2.sex = true
+        obj2.eat = function(food) {
+            console.log(food)
+        }
+        obj2.eat('南瓜')
+
+        // 方式三：工厂函数创建对象
+        function creatObj(name, age, sex) {
+            var obj = new Object()
+            obj.name = name
+            obj.age = age
+            obj.sex = sex
+            obj.eat = function(food) {
+                console.log(food)
+            }
+            return obj
+        }
+        var obj3 = creatObj('王五', 38, true)
+        obj3.eat('冬瓜')
+
+        // 方式四：自定义构造函数创建对象
+            // 构造函数与普通函数没有任何区别，只不过在调用时需要与 new 连用
+            // 书写规范：构造函数首字母大写；
+            // 使用构造函数时，如果不需要传参、可以不跟 ()，但推荐使用 ()
+            // 与 new 连用，return 没有任何意义
+        function Person(name, age, sex) {
+            // 与 new 连用时，this 是当前实例
+            // 不与 new 连用，this 是上下文实例
+            this.name = name
+            this.age = age
+            this.sex = sex
+
+            // new 一次对象，就会创建一个函数占用内存空间
+            this.eat = function(food) {
+                console.log('吃: ', food)
+            }
+
+            // 将 drink 函数添加到 Person 类上，即 drink 属于 Person 类
+            // 多次实例话对象，只会有一个 drink 函数，占用一个内存空间
+            // 对象调函数，该对象没有函数，去 Person 查找，找到则使用 Person 上的函数；
+            Person.prototype.drink = function(food) {
+                console.log('喝: ', food)
+            }
+
+            Person.prototype.a = 'People'
+            // return 基本数据类型，无意义
+            // return null
+            // return 复杂数据类型，返回该数据类型; 构造函数无意义
+            // return {name:'1', age:2}
+        }
+        var obj4 = new Person('赵六', 58, true)
+        obj4.eat('甜瓜')
+
+        /// 不传递参数
+        var obj5 = new Person
+
+        console.log(obj4.eat == obj5.eat)
+        console.log(obj4.drink == obj5.drink)
+
+        console.log(obj1)
+        console.log(obj2)
+        console.log(obj3)
+        console.log(obj4)
+        console.log(obj5)
+
+        console.log(obj4.__proto__ )
+        console.log(Person.prototype)
+
+        console.log(obj4.__proto__ === Person.prototype)
+        console.log('Object === Person.prototype', Object.prototype === Person.prototype.__proto__)
+        console.log('Function.prototype === Person.__proto__', Function.prototype === Person.__proto__)
+        console.log('Object.prototype.__proto__',  Object.prototype.__proto__)
+        console.log('Function.prototype === Object.__proto__', Function.prototype === Object.__proto__)
+        console.log('Function.prototype.__proto__ === Object.prototype', Function.prototype.__proto__ === Object.prototype)
+
+    </script>
+</body>
+</html>
+ 
+<!-- 
+    在 JS 内部，所有的函数都属于内置构造函数 Function 的实例
+
+    Prototype 原型
+    * 定义：每一个函数天生自带一个属性，叫做 prototype，是一个对象；
+    * 构造函数也是函数，也会有这个自带控件 prototype
+    * 每一个对象自带一个 __proto__ ，指向所属构造函数的 prototype : obj4.__proto__ === Person.prototype
+        * 访问对象成员时，首先在自己身上查找，找不到再去 __proto__ 上查找
+        * 访问对象函数时，首先在自己身上查找，找不到再去  __proto__ 上查找
+    * 一般将对象的函数放在 prototype 上，这样子可以只占用一份内存 
+    *
+    * 1、实例对象身上的 __proto__ 指向谁？指向所属构造函数的 prototype！
+        * obj 所属的构造函数是 Person()
+        * obj.__proto__ === Person.prototype
+    * 2、构造函数 Person.prototype 的 __proto__ 指向谁？
+        * Person.prototype 是一个对象数据类型 Object
+        * 在 JS 内部所有的 Object 数据类型都属于 Object 这个内置构造函数
+        * Person.prototype 属于 Object 内置构造函数
+        * Person.prototype.__proto__ === Object.prototype
+    * 3、Person 的  __proto__ 指向谁？
+        * Person 是一个构造函数，而函数本身也是一个对象，因此 Person 也有 __proto__；
+        * 在 JS 内部，所有的函数都属于内置构造函数 Function 的实例
+        * 因此 Function.prototype === Person.__proto__
+    * 4、Object.prototype 的  __proto__ 指向谁？
+        * Object.prototype 是一个对象数据类型，只要是对象，都是 Object 这个内置构造函数的
+        * Object.prototype 在 JS 内部叫做顶级模型，不再有 __proto__；
+        * Object.prototype.__proto__ === null
+    * 5、Object 的  __proto__ 指向谁？
+        * Object 是一个内置构造函数，因此也是一个对象；
+        * Object 也是 Function 的实例
+        * Object.__proto__ === Function.prototype
+    * 6、Function.prototype 的  __proto__ 指向谁？
+        * Function.prototype 也是一个对象数据类型
+        * Function.prototype.__proto__ === Object.prototype
+    * 7、Function 的  __proto__ 指向谁？
+        * Function 也是一个内置构造函数；
+        * Function 自己是自己的构造函数；
+        * Function 自己是自己的实例对象
+    *
+    *
+    *
+    * 原型链：使用 __proto__ 串联起来的对象链结构
+        * 每一个对象，都有一个属于自己的原型链
+        * 作用：为了访问对象成员；
+    * 对象访问机制：
+        * 首先在自己身上查找，如果找到则直接使用；
+        * 如果没有，则沿着 __proto__ 去原型链查找；
+        * 直到 Object.prototype 都没有，那么返回 undefined;
+ -->

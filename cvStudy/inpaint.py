@@ -2,9 +2,9 @@
 import cv2
 
 # 破损图片
-img = cv2.imread("./img/bad.png")
+img = cv2.imread("./img/time.png")
 # mask 图片
-mask = cv2.imread("./img/badMask.png") 
+mask = cv2.imread("./img/time2.png") 
 gray = cv2.cvtColor(mask, cv2.COLOR_BGR2GRAY)
 
 dst = cv2.inpaint(img, gray, 5, cv2.INPAINT_TELEA)

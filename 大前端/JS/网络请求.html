@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网络请求</title>
+</head>
+<body>
+    <script>
+        // 启动 json-server 服务器
+        // json-server --watch demo.json --port 3100
+
+        // GET： 查询数据
+        // var xhr = new XMLHttpRequest()
+        // xhr.open('GET', 'http://localhost:3100/users?username=李四', true)
+        // xhr.onload = function() {
+        //     console.log('请求完成1', JSON.parse(xhr.responseText))
+        // }
+        // xhr.send()
+
+        function registerUser(info, callback) {
+            var param = JSON.stringify(info)
+            var xhr3 = new XMLHttpRequest()
+            xhr3.onload = function() {
+                callback(JSON.parse(xhr3.responseText))
+            }
+            xhr3.open('POST', 'http://localhost:3100/users', true)
+            xhr3.setRequestHeader("Content-Type", "application/json;charset=UTF-8")
+            xhr3.send(param)
+        }
+
+        function registerUser2(info, callback) {
+            fetch('http://localhost:3100/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json;charset=UTF-8',
+                },
+                body: JSON.stringify(info),
+            }).then(response => {
+                if (response.status === 200) {
+                    return response.json()
+                } else {
+                    console.log('fail', response)
+                    return Promise.reject(response.json())
+                }
+            }).then(function(data) {
+                console.log('data', data);
+            }).catch(function(err) {
+                console.log('error', err);
+            });
+        }
+
+        registerUser2({username:'王五', age: 38, sex: true}, (response)=>{
+            console.log('register' ,response)
+        })
+        
+    </script>
+</body>
+</html>
+ 

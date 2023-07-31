@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <h1>登录页面</h1>
+    <div>
+      <div>用户名：<input id="username"/></div>
+      <div>密 码：<input type="password" id="password"/></div>
+      <div><button id="loginBtn">登录</button></div>
+    </div>
+    
+    <script>
+      let username = document.querySelector('#username')
+      let password = document.querySelector('#password')
+      let addBtn = document.querySelector('#loginBtn')
+      addBtn.onclick = ()=>{
+        fetch('/users/login', {
+          method:'POST',
+          body:JSON.stringify({
+            username: username.value,
+            password: password.value
+          }), 
+          headers:{
+            'Content-Type':'application/json'
+          }
+        }).then(res=>res.json()).then(res=>{
+          if (res.code == 0) {
+            /// 登录成功
+            location.href = '/'
+          } else {
+            /// 登录失败
+            alert('用户名与密码不匹配')
+          }
+          console.log('login:', res)
+        })
+      }
+    </script>
+  </body>
+</html>

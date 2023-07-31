@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        .box1 {
+            height: 100px;
+            width: 100px;
+            border: 1px solid red;
+            margin: auto;
+        }
+        .box2 {
+            width: 60px;
+            height: 60px;
+            border: 1px solid blue;
+            margin: auto;
+        }
+        .box3 {
+            width: 30px;
+            height: 30px;
+            border: 1px solid black;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">1
+        <div class="box2">2
+            <div class="box3">3
+        
+            </div>
+        </div>
+    </div>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+    <script>
+
+        // 获取 id 为 box1 的所有元素集合
+        console.log('box1:', $('#box1'))
+
+        // 获取所有类名为 box2 的元素集合
+        console.log('box2:', $('.box2'))
+
+        console.log('奇数 li:', $('li:nth-child(2n+1)'))
+
+        console.log('first li:', $('li').first())
+        console.log('prev li:', $('li').prev())
+        console.log('prevAll li:', $('li').prevAll())
+        console.log('next li:', $('li').next())
+        console.log('nextAll li:', $('li').nextAll())
+
+        // 获取所有父级元素，直到 html 标签为止
+        console.log('parents li:', $('li').parents())
+        /// 兄弟元素
+        console.log('siblings li:', $('li').siblings())
+        console.log('索引 li:', $('li').eq(1))
+
+    </script>
+</body>
+</html>
+ 
+<!-- 
+   jquery 简介 https://www.w3school.com.cn/jquery/jquery_intro.asp
+ -->

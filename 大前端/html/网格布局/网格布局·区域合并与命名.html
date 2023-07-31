@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网格布局·区域合并与命名</title>
+    <style>
+
+        .item {
+            border: 1px solid blue;
+        }
+
+        .box1 {
+            width: 600px;
+            height: 600px;
+            background-color: red;
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px 30px;
+            grid-template-areas: 'a1 a1 a3' 
+                                 'a1 a1 b3' 
+                                 'c1 c2 c2';
+        }
+
+        .item:nth-child(1) {
+            grid-area: a1;
+        }
+        .item:nth-child(5) {
+            grid-area: c2;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+  
+</body>
+</html>
+ 

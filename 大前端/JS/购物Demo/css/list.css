@@ -1,0 +1,147 @@
+div.filterBox {
+    font-size: 30px;
+    width: 90%;
+    margin: 20px auto;
+    border: 1px solid red;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+div.filterBox > .content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+div.filterBox > .content > p {
+    width: 120px;
+    font-size: 20px;
+    text-align: center;
+}
+
+div.filterBox > .content > ul {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.filterBox > .content > ul > li {
+    padding: 0px 10px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0px 5px;
+}
+
+div.filterBox > .content > ul > li:hover, div.filterBox > .content > ul > li.active {
+    background-color: pink;
+    color: white;
+}
+
+div.filterBox > .content > input.search {
+    font-size: 20px;
+    height: 20px;
+    padding-left: 20px;
+}
+
+div.filterBox > .content > span {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.disable {
+    background-color: red;
+    cursor: not-allowed;
+}
+
+div.filterBox > .content > span.disable {
+    background-color: #CCC;
+    cursor: not-allowed;
+}
+
+div.filterBox > .content > span.left, div.filterBox > .content > span.right {
+    background-color: skyblue;
+    color: white;
+}
+
+div.filterBox > .content > select {
+    margin-left: 20px;
+    font-size: 20px;
+    padding-left: 20px;
+}
+
+div.filterBox > .content > input.page {
+    width: 50px;
+    text-align: center;
+    padding-left: 0px;
+    margin: 0 20px;
+}
+
+div.filterBox > .content >button {
+    font-size: 20px;
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+.list {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.list > li {
+    width: 280px;
+    border: 1px solid red;
+    margin-bottom: 10px;
+}
+
+.list > li > .show {
+    width: 280px;
+    position: relative;
+}
+
+.list > li > .show > div {
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.list > li > .show > div.sale {
+    background-color: orange;
+    right: 60px;
+}
+
+
+.list > li > .info {
+    box-sizing: border-box;
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.list > li > .info > p.price {
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list > li > .info > p.price > .current {
+    color: red;
+}
+
+.list > li > .info > p.price > .old {
+    color: #CCC;
+    font-size: 14px; 
+}
+
+.list > li > .info > button {
+    padding: 5px;
+    cursor: pointer;
+}

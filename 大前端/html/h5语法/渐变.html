@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3·线性渐变与径向渐变与重复渐变</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            float: left;
+        }
+
+        .box1 {
+            background: linear-gradient(to top right, red, blue, yellow, black);
+        }
+
+        .box2 {
+            background: linear-gradient(110deg, red, blue, yellow, black);
+        }
+
+        .box3 {
+            /* red 从 10% 开始渐变、blue 从 50% 开始渐变， yellow 从 70% 开始渐变*/
+            background: radial-gradient(red 10%, blue 50%, yellow 70%);
+            border-radius: 50%;
+        }
+
+        .box4 {
+            height: 50px;
+            /* shape：渐变的形状，elipse表示椭园形，circle表示圆形。默认为ellipse，如果元素形状为正方形的元素，则ellipse和circle显示一样。 */
+            background: radial-gradient(circle,red, blue, yellow);
+        }
+
+        .box5 {
+            height: 50px;
+            /* farthest-side：最远边;closest-corner：最近角; farthest-corner :最远角 ; closest-side */
+            background: -webkit-radial-gradient(60% 40%, farthest-corner, red, blue, yellow);
+        }
+
+
+        .box6 {
+            background: repeating-linear-gradient(20deg, red 10%, blue 20%);
+        }
+
+        .box7 {
+            background: -webkit-repeating-radial-gradient(red 10%, blue 20%);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 线性渐变 -->
+    <div class="box1"></div>
+    <div class="box2"></div>
+
+    <!-- 径向渐变 -->
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+
+    <!-- 重复渐变 -->
+    <div class="box6"></div>
+    <div class="box7"></div>
+</body>
+</html>
+ 

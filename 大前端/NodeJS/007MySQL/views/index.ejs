@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <h1>MongDB 数据库</h1>
+    <div>
+      <table border="1">
+        <thead>
+          <tr>
+            <td>id</td>
+            <td>用户名</td>
+            <td>年龄</td>
+            <td><button id="updateBtn1">修改</button></td>
+            <td><button id="deleteBtn1">删除</button></td>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <hr>
+    <div>
+      <div>用户名：<input id="username"/></div>
+      <div>密 码：<input type="password" id="password"/></div>
+      <div>年 龄：<input type="number" id="age"/></div>
+      <div><button id="localAddBtn">增</button></div>
+    </div>
+    <hr>
+    <div><button id="logoutBtn">退出登录</button></div>
+
+    <script>
+
+      // 查询数据并渲染
+      function findAll() {
+        fetch('/users').then(res=>res.json()).then(res=>{
+          let tbody = document.querySelector('tbody')
+          tbody.innerHTML = res.message.map(item=>`
+            <tr>
+              <td>${item._id}</td>
+              <td>${item.username}</td>
+              <td>${item.age}</td>
+              <td><button class="updateBtn" localID=${item._id}>修改</button></td>
+              <td><button class="deleteBtn" localID=${item._id}>删除</button></td>
+            </tr>
+          `).join("")
+        })
+      }
+      findAll()
+
+      let username = document.querySelector('#username')
+      let password = document.querySelector('#password')
+      let age = document.querySelector('#age')
+      let addBtn = document.querySelector('#localAddBtn')
+      addBtn.onclick = ()=>{
+        console.log(username.value, password.value, age.value)
+        fetch('/users', {
+          method:'POST',
+          body:JSON.stringify({
+            username: username.value,
+            password: password.value,
+            age: age.value
+          }), 
+          headers:{
+            'Content-Type':'application/json'
+          }
+        }).then(res=>res.json()).then(res=>{
+          findAll()
+        })
+      }
+
+      let deleteBtn = document.querySelector('#deleteBtn1')
+      deleteBtn.onclick = ()=>{
+        fetch('/users/63f6cc814ba52eb0fa1fb253', {
+          method:'DELETE'
+        }).then(res=>res.json()).then(res=>{
+          findAll()
+        })
+      }
+
+      let updateBtn = document.querySelector('#updateBtn1')
+      updateBtn.onclick = ()=>{
+        fetch('/users/63f6cc814ba52eb0fa1fb253', {
+          method:'PUT',
+          body:JSON.stringify({
+            username: username.value,
+            password: password.value,
+            age: age.value
+          }), 
+          headers:{
+            'Content-Type':'application/json'
+          }
+        }).then(res=>res.json()).then(res=>{
+          findAll()
+        })
+      }
+
+
+      let logoutBtn = document.querySelector('#logoutBtn')
+      logoutBtn.onclick = ()=>{
+        console.log('logoutBtn')
+        fetch('/users/logout').then(res=>res.json()).then(res=>{
+          if (res.code == 0) {
+            // 退出成功
+            location.href = '/login'
+          } else {
+            // 退出失败
+            alert('退出登录失败')
+          }
+          console.log('logout:', res)
+        })
+      }
+    </script>
+  </body>
+</html>

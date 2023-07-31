@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home·模板</title>
+</head>
+<body>
+    <!-- <h1><%=title%></h1> 导入公共模板内容并解析 -->
+    <%-include('./header',{title})%>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script>
+      // 添加一个请求拦截器
+      axios.interceptors.request.use(function (config) {
+        // 请求发出前、第一个调用的方法
+        const token = localStorage.getItem('token')
+        console.log('getToken', token)
+        token && (config.headers.Authorization = `Bearer ${token}`)
+        return config;
+      }, function (error) {
+        return Promise.reject(error);
+      });
+
+      // 添加一个响应拦截器
+      axios.interceptors.response.use(function (response) {
+        // 请求成功后、第一个调用的方法
+        const {authorization} = response.headers;
+        authorization && localStorage.setItem('token', authorization)
+        return response;
+      }, function (error) {
+        if (error.errCode == 401) {
+          localStorage.removeItem('token')
+          location.href = '/login' 
+        }
+        console.log('error 1:' , error)
+        return Promise.reject(error);
+      });
+    </script>
+
+    <script>
+        function findAll() {
+            axios.get('/user').then(function (response) {
+                console.log('response users', response);
+            })
+            .catch(function (error) {
+                console.log('users error', error);
+            })
+        }
+        findAll()
+    </script>
+</body>
+</html>

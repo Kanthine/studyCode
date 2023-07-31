@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <h1>登录页面</h1>
+    <div>
+      <div>用户名：<input id="username"/></div>
+      <div>密 码：<input type="password" id="password"/></div>
+      <div><button id="loginBtn">登录</button></div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script>
+      // 添加一个请求拦截器
+      axios.interceptors.request.use(function (config) {
+        // 请求发出前、第一个调用的方法
+        return config;
+      }, function (error) {
+        return Promise.reject(error);
+      });
+
+      // 添加一个响应拦截器
+      axios.interceptors.response.use(function (response) {
+        // 请求成功后、第一个调用的方法
+        const {authorization} = response.headers;
+        authorization && localStorage.setItem('token', authorization)
+        return response;
+      }, function (error) {
+        console.log('error 2:' , error)
+        return Promise.reject(error);
+      });
+    </script>
+
+    <script>
+      let username = document.querySelector('#username')
+      let password = document.querySelector('#password')
+      let addBtn = document.querySelector('#loginBtn')
+      addBtn.onclick = ()=>{     
+
+        axios.post('/user/login', {
+          username: username.value,  
+          password: password.value
+        }).then(function (response) {
+            location.href = '/' /// 登录成功
+            console.log('login:', response)
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      }
+    </script>
+  </body>
+</html>
+
+<!-- 
+  引入 npm install axios
+
+  https://www.npmjs.com/package/axios
+ -->

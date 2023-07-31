@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS·事件传递</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        .box1 {
+            height: 100px;
+            width: 100px;
+            border: 1px solid red;
+            margin: auto;
+        }
+        .box2 {
+            width: 60px;
+            height: 60px;
+            border: 1px solid blue;
+            margin: auto;
+        }
+        .box3 {
+            width: 30px;
+            height: 30px;
+            border: 1px solid black;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">1
+        <div class="box2">2
+            <div class="box3">3
+        
+            </div>
+        </div>
+    </div>
+    <script>
+        let box1 = document.querySelector('.box1')
+        let box2 = document.querySelector('.box2')
+        let box3 = document.querySelector('.box3')
+        box1.onclick = function(event) {
+            console.log('box1.onclick', event.target.className)
+        }
+        box2.onclick = function() {
+            console.log('box2.onclick')
+        }
+        box3.onclick = function(event) {
+            event.stopPropagation(); /// 阻断响应链向父元素传递
+            console.log('box3.onclick')
+        }
+    </script>
+</body>
+</html>
+ 

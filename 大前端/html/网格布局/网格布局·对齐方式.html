@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网格布局·对齐方式</title>
+    <style>
+
+        .item {
+            width: 50px;
+            height: 50px;
+            border: 1px solid blue;
+        }
+
+        .box1 {
+            width: 600px;
+            height: 600px;
+            border: 2px solid red;
+            display: grid;
+            
+            /* 盒子中的每一项如何显示 */
+            justify-content: space-around;
+            align-content: space-around;
+
+            /* 每一个格子中的子项目如何显示 */
+            justify-items: center;
+            align-items: center;
+
+            /*  grid-auto-flow 
+             *  默认是 row 行排列
+             *  column 列排版
+             */
+            grid-auto-flow: column;
+            grid-template-rows: repeat(3, 100px);
+            grid-template-columns: repeat(3, 100px);
+            /* gap: 2px 3px; */
+
+
+            /* grid-template-areas: 'a1 a1 a1 a1 a5 a5' 
+                                 'a1 a1 a1 a1 b5 b5' 
+                                 'c1 c1 c3 c4 b5 b5'; */
+        }
+        /* .item:nth-child(1) {
+            grid-area: a1;
+        }
+        .item:nth-child(2) {
+            grid-area: a5;
+        }
+        .item:nth-child(3) {
+            grid-area: c1;
+        }
+        .item:nth-child(4) {
+            grid-area: c3;
+        }
+        .item:nth-child(5) {
+            grid-area: c4;
+        }
+        .item:nth-child(6) {
+            grid-area: b5;
+        } */
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+    </div>
+  
+</body>
+</html>
+ 

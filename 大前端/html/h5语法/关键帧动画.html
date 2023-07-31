@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关键帧动画</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+    
+            /* animation-fill-mode 动画填充模式
+             * none 默认值
+             * forwards 保留最后一帧画面
+             * backwards 保留第一帧动画
+             */
+
+            /*  animation-direction 动画方向
+             * normal  正常(from -> to)
+             * reverse 反方向 (to -> from)
+             * alternate 正反交替 (from -> to -> from)
+             * alternate-reverse 反方向正反交替
+             */
+
+            /* animation-play-state 动画状态
+             * paused  暂停
+             * running 运行中
+             */
+            
+             /*  animation-iteration-count:  
+              *  infinite; 执行无限次
+              */
+
+        /* 声明一个关键帧动画 */
+        @keyframes abc {
+            from {
+                width: 200px;
+                height: 200px;
+                background-color: red;
+            }
+            to {
+                width: 300px;
+                height: 300px;
+                background-color: blue;
+            }
+        }
+
+        .box1 {
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            background-color: red;
+            /* 使用一个动画 */
+            animation: abc 2s linear infinite alternate;
+            animation-fill-mode: both;
+        }
+
+        @keyframes abcd {
+            0%, 100% {
+                width: 200px;
+                height: 200px;
+                background-color: red;
+            }
+
+            25%, 75% {
+                width: 600px;
+                height: 600px;
+                background-color: black;
+            }
+
+            50% {
+                width: 300px;
+                height: 300px;
+                background-color: blue;
+            }
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            background-color: red;
+            
+            animation-name: abcd;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-fill-mode: both;
+            animation-direction: alternate-reverse;
+            animation-fill-mode: backwards;
+            /* 
+            animation: name duration timing-function delay iteration-count direction fill-mode;
+            infinite 执行无限次
+             */
+        }
+
+        .box2:hover {
+            /* 鼠标移上去、暂停动画 */
+            animation-play-state: paused;
+        }
+
+        @keyframes outHide {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+        .boxRight {
+            width: 200px;
+            height: 100vh;
+            background-color: yellow;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            transform: translateX(100%);  /* 100% 相对于自身的宽度 */
+            animation: outHide 1s linear infinite alternate;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+
+    <!-- 抽屉效果 -->
+    <div class="boxRight"></div>
+</body>
+</html>
+ 

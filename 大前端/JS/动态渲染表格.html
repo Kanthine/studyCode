@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态渲染表格</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        .creatTable {
+            display: block;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <button id="creatTable" class="creatTable">创建表格</button>
+    <table border="1" cellspacing="0">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>姓名</th>
+                <th>年龄</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1</th>
+                <th>陈大</th>
+                <th>8</th>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        let users = [
+            {'id':3, 'name': '张三', 'age': 18},
+            {'id':4, 'name': '李四', 'age': 28},
+            {'id':5, 'name': '王五', 'age': 38},
+        ]
+        creatTable.onclick = function() {
+            let body = document.querySelector('tbody')     
+
+            users.forEach(function(item){
+                console.log(item)
+                let tr = document.createElement('tr')
+                for (const key in item) {
+                    let th = document.createElement('th')
+                    th.innerText = item[key]
+                    tr.appendChild(th)
+                }
+                body.appendChild(tr)
+            })
+        }
+    </script>
+</body>
+</html>
+ 

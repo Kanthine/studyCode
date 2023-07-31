@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS·回退到顶部</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        .box {
+            width: 200px;
+            border: 2px solid red;
+        }
+        img {
+            width: 100%;
+        }
+        p {
+            display: block;
+            height: 20px;
+            text-align: center;
+        }
+        .topBtn {
+            width: 100px;
+            height: 38px;
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            color: white;
+            text-align: center;
+            line-height: 38px;
+            border-radius: 10px;
+            background-color: red;
+        }
+
+        .topBtnShow {
+            display: block;
+        }
+        .topBtnHide {
+            display: none;
+        }
+    </style>
+    
+    <script>
+        window.onscroll = function(){
+            let height = document.documentElement.scrollTop || document.body.scrollTop
+            let btn = document.querySelector('.topBtn')
+            if (height > 100) {
+                btn.className = 'topBtn topBtnShow'
+            } else {
+                btn.className = 'topBtn topBtnHide'
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div id="topBtn" class="topBtn topBtnHide">回到顶部</div>
+
+    <div class="box">
+        <img src="../img/clothes.png" alt="">
+        <p>第一个</p>
+    </div>
+    <div class="box">
+        <img src="../img/clothes.png" alt="">
+        <p>第二个</p>
+    </div>
+    <div class="box">
+        <img src="../img/clothes.png" alt="">
+        <p>第三个</p>
+    </div>
+    <div class="box">
+        <img src="../img/clothes.png" alt="">
+        <p>第四个</p>
+    </div>
+
+
+    <script>
+        topBtn.onclick = function() {
+            console.log('滚动至')
+            window.scrollTo({
+                left: 0,   
+                top: 0,
+                behavior:"smooth",
+            })
+        }
+    </script>
+</body>
+</html>
+ 

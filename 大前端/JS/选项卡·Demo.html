@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鼠标跟随·Demo</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        html, body {
+            height: 100%;
+        }
+        .tab, .tab2 {
+            width: 500px;
+            height: 200px;
+            border: 1px solid red;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+        }
+        ul, ol, li {
+            list-style: none;
+        }
+        ul {
+            height: 50px;
+            display: flex;
+        }
+        ul>li {
+            flex: 1;
+            text-align: center;
+            font-size: 25px;
+            line-height: 50px;
+            color: white;
+            background-color: rgba(1, 0, 0, 1);
+        }
+        ul>li.active {
+            background-color: blue ;
+        }
+        ol {
+            flex: 1;
+            position: relative;
+        }
+        ol>li {
+            display: none;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            font-size: 100px;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            background-color: rgba(0, 1, 0, 1);
+        }
+        ol>li.active {
+            display: flex;
+            background-color: red;
+        } 
+    </style>
+</head>
+<body>
+    <div class="tab">
+        <ul>
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <ol>
+            <li class="active">a</li>
+            <li>b</li>
+            <li>c</li>
+        </ol>
+    </div>
+
+    <div class="tab2">
+        <ul>
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <ol>
+            <li class="active">a</li>
+            <li>b</li>
+            <li>c</li>
+            <li>d</li>
+        </ol>
+    </div>
+    <script>
+
+        function Tabs(ele) {
+            this.ele = document.querySelector(ele)
+            this.btns = this.ele.querySelectorAll('ul>li')
+            this.contents = this.ele.querySelectorAll('ol>li')
+        }
+        Tabs.prototype.change = function() {
+            const _this = this;
+            for (let index = 0; index < this.btns.length; index++) {
+                let btn = this.btns[index];
+                btn.setAttribute('index', index);
+                btn.addEventListener('click', function(){
+                    for (let i = 0; i < _this.btns.length; i++) {
+                        _this.btns[i].className = '';
+                        _this.contents[i].className = '';
+                    }
+                    _this.btns[index].className = 'active';
+                    _this.contents[index].className = 'active';
+                })
+            }
+        }
+
+        let box = new Tabs('.tab')
+        box.change()
+        let box2 = new Tabs('.tab2')
+        box2.change()
+    </script>    
+</body>
+</html>
+ 

@@ -1,0 +1,128 @@
+{
+  "id": "3761607",
+  "name": "myH5",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "18267904",
+      "name": "版权",
+      "font_class": "banquan",
+      "unicode": "e98b",
+      "unicode_decimal": 59787
+    },
+    {
+      "icon_id": "18267905",
+      "name": "安全隐私",
+      "font_class": "anquanyinsi",
+      "unicode": "e98e",
+      "unicode_decimal": 59790
+    },
+    {
+      "icon_id": "18267906",
+      "name": "底层架构",
+      "font_class": "dicengjiagou",
+      "unicode": "e98f",
+      "unicode_decimal": 59791
+    },
+    {
+      "icon_id": "18267907",
+      "name": "仓储仓库",
+      "font_class": "cangchucangku",
+      "unicode": "e990",
+      "unicode_decimal": 59792
+    },
+    {
+      "icon_id": "18267912",
+      "name": "发票",
+      "font_class": "fapiao",
+      "unicode": "e993",
+      "unicode_decimal": 59795
+    },
+    {
+      "icon_id": "18267915",
+      "name": "订单",
+      "font_class": "dingdan",
+      "unicode": "e994",
+      "unicode_decimal": 59796
+    },
+    {
+      "icon_id": "18267916",
+      "name": "服务器",
+      "font_class": "fuwuqi",
+      "unicode": "e995",
+      "unicode_decimal": 59797
+    },
+    {
+      "icon_id": "18267933",
+      "name": "卖家购物车",
+      "font_class": "maijiagouwuche",
+      "unicode": "e996",
+      "unicode_decimal": 59798
+    },
+    {
+      "icon_id": "18267936",
+      "name": "卖家店铺",
+      "font_class": "maijiadianpu",
+      "unicode": "e997",
+      "unicode_decimal": 59799
+    },
+    {
+      "icon_id": "18267937",
+      "name": "管理",
+      "font_class": "guanli",
+      "unicode": "e998",
+      "unicode_decimal": 59800
+    },
+    {
+      "icon_id": "18267940",
+      "name": "票据",
+      "font_class": "piaoju",
+      "unicode": "e999",
+      "unicode_decimal": 59801
+    },
+    {
+      "icon_id": "18267952",
+      "name": "时间戳",
+      "font_class": "shijianchuo",
+      "unicode": "e99a",
+      "unicode_decimal": 59802
+    },
+    {
+      "icon_id": "18267954",
+      "name": "图片",
+      "font_class": "tupian",
+      "unicode": "e99b",
+      "unicode_decimal": 59803
+    },
+    {
+      "icon_id": "18267955",
+      "name": "条形码",
+      "font_class": "tiaoxingma",
+      "unicode": "e99c",
+      "unicode_decimal": 59804
+    },
+    {
+      "icon_id": "19410758",
+      "name": "用户",
+      "font_class": "user",
+      "unicode": "e99e",
+      "unicode_decimal": 59806
+    },
+    {
+      "icon_id": "18267910",
+      "name": "查验",
+      "font_class": "chayan",
+      "unicode": "e98c",
+      "unicode_decimal": 59788
+    },
+    {
+      "icon_id": "18267911",
+      "name": "二维码",
+      "font_class": "erweima",
+      "unicode": "e98d",
+      "unicode_decimal": 59789
+    }
+  ]
+}

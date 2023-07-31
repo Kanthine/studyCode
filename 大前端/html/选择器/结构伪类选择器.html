@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>结构伪类选择器</title>
+    <style>
+
+        /* :root 根选择器  */
+        :root,body {
+            height: 100%;
+            background-color: green;
+        }
+
+        .box1 {
+            width: 940px;
+            height: 100px;
+            background-color: black;
+            margin: 0 auto;
+        }
+
+        .box1 div {
+            width: 300px;
+            height: 100%;
+            background-color: red;
+            float: left;
+            margin-right: 20px;
+        }
+
+        .box1 div:last-child {
+            margin-right: 0px;
+        }
+
+        .box2 {
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        /** .box2 下面 li 的偶数标签 
+         * 偶数 even 或者 2n
+         * 奇数 odd 或者 2n - 1
+         * 3n：3、6、9 等是 3 的倍数的标签
+        */
+        .box2 li:nth-child(3n) {
+            background-color: red;
+        }
+
+
+        /* div 标签中只有一个 p 标签才生效 */
+        .box3 div p:only-child {
+            background-color: blue;
+            color: white;
+        }
+
+        /* div 标签中为空标签；
+         * 注意：空格、回车符也不算空标签 
+         */
+        .box3 div:empty {
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="box1">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="box2">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+        </ul>
+    </div>
+
+
+    <div class="box3">
+        独生子女
+
+        <div>
+            <p>老大</p>
+            <p>老二</p>
+        </div>
+
+        <div>
+            <p>自己</p>
+        </div>
+
+        <!-- 空标签 -->
+        <div></div>
+    </div>
+
+</body>
+</html>
+ 

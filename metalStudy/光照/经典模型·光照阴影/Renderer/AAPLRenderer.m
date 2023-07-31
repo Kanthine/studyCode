@@ -1,0 +1,264 @@
+@import simd;
+@import MetalKit;
+
+#import "AAPLRenderer.h"
+#import "AAPLShaderTypes.h"
+#import "AAPLMesh.h"
+#include "AAPLMathUtilities.h"
+
+@interface AAPLRenderer ()
+{
+    MTKView *_mtkView;
+    id<MTLDevice> _device;
+    id<MTLRenderPipelineState> _renderPipeline;
+    id<MTLCommandQueue> _commandQueue;
+    id<MTLDepthStencilState> _depthState;
+    MTLVertexDescriptor *_vertexDescriptor;
+    NSArray<AAPLMesh *> *_meshes;
+
+    id <MTLRenderPipelineState> _shadowGenPipelineState;
+
+    
+    vector_float2 _viewportSize;
+    Uniforms _uniforms;
+    float _rotation;
+}
+@end
+
+@implementation AAPLRenderer
+
+- (nonnull instancetype)initWithMTKView:(nonnull MTKView *)mtkView {
+    self = [super init];
+    if(self) {
+        mtkView.depthStencilPixelFormat = MTLPixelFormatDepth32Float_Stencil8;
+        mtkView.colorPixelFormat          = MTLPixelFormatBGRA8Unorm_sRGB;
+        mtkView.depthStencilPixelFormat = MTLPixelFormatDepth32Float_Stencil8;
+        _mtkView = mtkView;
+        _device = mtkView.device;
+        NSAssert(_device, @"获取设备失败");
+        
+        [self loadAssets];
+    }
+    return self;
+}
+
+- (void)loadAssets {
+    // Create and load assets into Metal objects including meshes and textures
+    NSError *error = nil;
+    
+    #pragma mark Mesh vertex descriptor setup
+    {
+
+        _vertexDescriptor = [MTLVertexDescriptor new];
+
+        // Positions.
+        _vertexDescriptor.attributes[AAPLVertexAttributePosition].format = MTLVertexFormatFloat3;
+        _vertexDescriptor.attributes[AAPLVertexAttributePosition].offset = 0;
+        _vertexDescriptor.attributes[AAPLVertexAttributePosition].bufferIndex = AAPLBufferIndexMeshPositions;
+
+        // Texture coordinates.
+        _vertexDescriptor.attributes[AAPLVertexAttributeTexcoord].format = MTLVertexFormatFloat2;
+        _vertexDescriptor.attributes[AAPLVertexAttributeTexcoord].offset = 0;
+        _vertexDescriptor.attributes[AAPLVertexAttributeTexcoord].bufferIndex = AAPLBufferIndexMeshGenerics;
+
+        // Normals.
+        _vertexDescriptor.attributes[AAPLVertexAttributeNormal].format = MTLVertexFormatHalf4;
+        _vertexDescriptor.attributes[AAPLVertexAttributeNormal].offset = 8;
+        _vertexDescriptor.attributes[AAPLVertexAttributeNormal].bufferIndex = AAPLBufferIndexMeshGenerics;
+
+        // Tangents
+        _vertexDescriptor.attributes[AAPLVertexAttributeTangent].format = MTLVertexFormatHalf4;
+        _vertexDescriptor.attributes[AAPLVertexAttributeTangent].offset = 16;
+        _vertexDescriptor.attributes[AAPLVertexAttributeTangent].bufferIndex = AAPLBufferIndexMeshGenerics;
+
+        // Bitangents
+        _vertexDescriptor.attributes[AAPLVertexAttributeBitangent].format = MTLVertexFormatHalf4;
+        _vertexDescriptor.attributes[AAPLVertexAttributeBitangent].offset = 24;
+        _vertexDescriptor.attributes[AAPLVertexAttributeBitangent].bufferIndex = AAPLBufferIndexMeshGenerics;
+
+        // Position Buffer Layout
+        _vertexDescriptor.layouts[AAPLBufferIndexMeshPositions].stride = 12;
+        _vertexDescriptor.layouts[AAPLBufferIndexMeshPositions].stepRate = 1;
+        _vertexDescriptor.layouts[AAPLBufferIndexMeshPositions].stepFunction = MTLVertexStepFunctionPerVertex;
+
+        // Generic Attribute Buffer Layout
+        _vertexDescriptor.layouts[AAPLBufferIndexMeshGenerics].stride = 32;
+        _vertexDescriptor.layouts[AAPLBufferIndexMeshGenerics].stepRate = 1;
+        _vertexDescriptor.layouts[AAPLBufferIndexMeshGenerics].stepFunction = MTLVertexStepFunctionPerVertex;
+    }
+    
+    id<MTLLibrary> defaultLibrary = [_device newDefaultLibrary];
+
+    {
+        MTLRenderPipelineDescriptor *descriptor = [[MTLRenderPipelineDescriptor alloc] init];
+        descriptor.label = @"OBJ 模型渲染";
+        descriptor.vertexFunction = [defaultLibrary newFunctionWithName:@"vertexRender"];
+        descriptor.fragmentFunction = [defaultLibrary newFunctionWithName:@"fragmentRender"];
+        descriptor.colorAttachments[0].pixelFormat = _mtkView.colorPixelFormat;
+        descriptor.vertexDescriptor = _vertexDescriptor;
+        descriptor.depthAttachmentPixelFormat = _mtkView.depthStencilPixelFormat;
+        descriptor.stencilAttachmentPixelFormat = _mtkView.depthStencilPixelFormat;
+        
+        _renderPipeline = [_device newRenderPipelineStateWithDescriptor:descriptor error:&error];
+        NSAssert(_renderPipeline, @"渲染管道创建失败 : %@",error);
+    }
+    
+    {
+        MTLDepthStencilDescriptor *depthStateDesc = [[MTLDepthStencilDescriptor alloc] init];
+        depthStateDesc.depthCompareFunction = MTLCompareFunctionLess;
+        depthStateDesc.depthWriteEnabled    = YES;
+        _depthState = [_device newDepthStencilStateWithDescriptor:depthStateDesc];
+    }
+    
+    #pragma mark Load meshes from model file
+    {
+        // Create a ModelIO vertexDescriptor so that the format/layout of the ModelIO mesh vertices
+        //   cah be made to match Metal render pipeline's vertex descriptor layout
+        MDLVertexDescriptor *modelIOVertexDescriptor = MTKModelIOVertexDescriptorFromMetal(_vertexDescriptor);
+
+        // Indicate how each Metal vertex descriptor attribute maps to each ModelIO attribute
+        modelIOVertexDescriptor.attributes[AAPLVertexAttributePosition].name  = MDLVertexAttributePosition;
+        modelIOVertexDescriptor.attributes[AAPLVertexAttributeTexcoord].name  = MDLVertexAttributeTextureCoordinate;
+        modelIOVertexDescriptor.attributes[AAPLVertexAttributeNormal].name    = MDLVertexAttributeNormal;
+        modelIOVertexDescriptor.attributes[AAPLVertexAttributeTangent].name   = MDLVertexAttributeTangent;
+        modelIOVertexDescriptor.attributes[AAPLVertexAttributeBitangent].name = MDLVertexAttributeBitangent;
+
+        NSURL *modelFileURL = [[NSBundle mainBundle] URLForResource:@"Temple" withExtension:@"obj"];
+
+        NSAssert(modelFileURL, @"Could not find model (%@) file in bundle", modelFileURL.absoluteString);
+
+        _meshes = [AAPLMesh newMeshesFromURL:modelFileURL
+                     modelIOVertexDescriptor:modelIOVertexDescriptor
+                                 metalDevice:_device
+                                       error:&error];
+        NSAssert(_meshes, @"Could not create meshes from model file %@: %@", modelFileURL.absoluteString, error);
+    }
+        
+    #pragma mark Shadow pass render pipeline setup
+    {
+        id <MTLFunction> shadowVertexFunction = [defaultLibrary newFunctionWithName:@"shadow_vertex"];
+
+        MTLRenderPipelineDescriptor *renderPipelineDescriptor = [MTLRenderPipelineDescriptor new];
+        renderPipelineDescriptor.label = @"Shadow Gen";
+        renderPipelineDescriptor.vertexDescriptor = nil;
+        renderPipelineDescriptor.vertexFunction = shadowVertexFunction;
+        renderPipelineDescriptor.fragmentFunction = nil;
+        renderPipelineDescriptor.depthAttachmentPixelFormat = MTLPixelFormatDepth16Unorm;
+
+        _shadowGenPipelineState = [_device newRenderPipelineStateWithDescriptor:renderPipelineDescriptor
+                                                                          error:&error];
+
+    }
+    
+    _commandQueue = [_device newCommandQueue];
+}
+
+
+- (void)drawMeshes:(nonnull id<MTLRenderCommandEncoder>)renderEncoder {
+    for (__unsafe_unretained AAPLMesh *mesh in _meshes)
+    {
+        __unsafe_unretained MTKMesh *metalKitMesh = mesh.metalKitMesh;
+
+        // Set mesh's vertex buffers
+        for (NSUInteger bufferIndex = 0; bufferIndex < metalKitMesh.vertexBuffers.count; bufferIndex++)
+        {
+            __unsafe_unretained MTKMeshBuffer *vertexBuffer = metalKitMesh.vertexBuffers[bufferIndex];
+            if((NSNull*)vertexBuffer != [NSNull null])
+            {
+                [renderEncoder setVertexBuffer:vertexBuffer.buffer
+                                        offset:vertexBuffer.offset
+                                       atIndex:bufferIndex];
+            }
+        }
+
+        // Draw each submesh of the mesh
+        for(__unsafe_unretained AAPLSubmesh *submesh in mesh.submeshes)
+        {
+            // Set any textures read/sampled from the render pipeline
+            [renderEncoder setFragmentTexture:submesh.textures[AAPLTextureIndexBaseColor]
+                                      atIndex:AAPLTextureIndexBaseColor];
+
+            [renderEncoder setFragmentTexture:submesh.textures[AAPLTextureIndexNormal]
+                                      atIndex:AAPLTextureIndexNormal];
+
+            [renderEncoder setFragmentTexture:submesh.textures[AAPLTextureIndexSpecular]
+                                      atIndex:AAPLTextureIndexSpecular];
+
+            MTKSubmesh *metalKitSubmesh = submesh.metalKitSubmmesh;
+
+            [renderEncoder drawIndexedPrimitives:metalKitSubmesh.primitiveType
+                                      indexCount:metalKitSubmesh.indexCount
+                                       indexType:metalKitSubmesh.indexType
+                                     indexBuffer:metalKitSubmesh.indexBuffer.buffer
+                               indexBufferOffset:metalKitSubmesh.indexBuffer.offset];
+        }
+    }
+}
+
+
+/// Draw to the depth texture from the directional lights point of view to generate the shadow map
+- (void)drawShadow:(nonnull id <MTLCommandBuffer>)commandBuffer {
+    id<MTLRenderCommandEncoder> encoder = [commandBuffer renderCommandEncoderWithDescriptor:_shadowRenderPassDescriptor];
+    encoder.label = @"Shadow Map Pass";
+    [encoder setRenderPipelineState:_shadowGenPipelineState];
+    [encoder setDepthStencilState:_shadowDepthStencilState];
+    [encoder setCullMode: MTLCullModeBack];
+    [encoder setDepthBias:0.015 slopeScale:7 clamp:0.02];
+    [encoder setVertexBuffer:_frameDataBuffers[_frameDataBufferIndex] offset:0 atIndex:AAPLBufferIndexFrameData];
+    [self drawMeshes:encoder];
+    [encoder endEncoding];
+}
+
+#pragma mark - MTKViewDelegate
+
+- (void)drawInMTKView:(nonnull MTKView *)view {
+    MTLRenderPassDescriptor *descritor = view.currentRenderPassDescriptor;
+    if (descritor == nil) return;
+    
+    [self updateGameState];
+    
+    id<MTLCommandBuffer> commandBuffer = [_commandQueue commandBuffer];
+    commandBuffer.label = @"命令缓冲区";
+    
+    id<MTLRenderCommandEncoder> renderEncoder = [commandBuffer renderCommandEncoderWithDescriptor:descritor];
+    renderEncoder.label = @"命令编码器";
+    [renderEncoder setRenderPipelineState:_renderPipeline];
+    [renderEncoder setVertexBytes:&_uniforms length:sizeof(_uniforms) atIndex:AAPLVertexInputIndexUniforms];
+    [renderEncoder setDepthStencilState:_depthState];
+    [renderEncoder setStencilReferenceValue:1];
+    [self drawMeshes:renderEncoder];
+    [renderEncoder endEncoding];
+    [commandBuffer presentDrawable:view.currentDrawable];
+    [commandBuffer commit];
+}
+
+- (void)mtkView:(nonnull MTKView *)view drawableSizeWillChange:(CGSize)size {
+    _viewportSize.x = size.width;
+    _viewportSize.y = size.height;
+        
+    _uniforms.cameraPos = simd_make_float3(0, 0, -1000.0);
+    _uniforms.cameraMatrix = matrix_look_at_left_hand(_uniforms.cameraPos,
+                                                      simd_make_float3(0, 0, 0),
+                                                      simd_make_float3(0, 1, 0));
+    
+    _uniforms.projectionMatrix = matrix_perspective_left_hand(0.32 * M_PI, _viewportSize.x / _viewportSize.y, 1.0, 1500.0f);
+    
+    _uniforms.ambient = simd_make_float4(0.1, 0.1, 0.1, 1.0); // 环境光
+    _uniforms.diffuse = simd_make_float4(0.7, 0.7, 0.7, 1.0);
+    _uniforms.specular = simd_make_float4(0.3, 0.3, 0.3, 1.0);
+    
+    _uniforms.isDirectionLight = NO;
+    _uniforms.lightLocation  = simd_make_float3(100, 100, -100);   /// 光源位置
+    _uniforms.lightDirection = simd_make_float3(2.0, 0.0, -2.0);  /// 光源方向
+}
+
+#pragma mark - private method
+
+- (void)updateGameState {
+//    _uniforms.worldMatrix = matrix_multiply(matrix4x4_translation(0, -200, 0), matrix4x4_rotation(_rotation, 1, 1, 0));
+    
+    _uniforms.worldMatrix = matrix_multiply(matrix4x4_translation(0, -200, 0), matrix4x4_rotation(_rotation, 0, 1, 0));
+    _rotation += 0.005f;
+}
+
+@end

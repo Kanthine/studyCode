@@ -65,7 +65,6 @@
     /// 使用缓冲区创建一个命令编码器
     id<MTLRenderCommandEncoder> renderEncoder = [commandBuffer renderCommandEncoderWithDescriptor:renderPassDescriptor];
     renderEncoder.label = @"Render Encoder";
-        
     [renderEncoder setRenderPipelineState:_pipelineState]; /// 设置渲染管线
     [renderEncoder setDepthStencilState:_depthState];      /// 设置深度测试
     [renderEncoder setVertexBytes:&_viewportSize length:sizeof(_viewportSize) atIndex:AAPLVertexInputIndexViewport];

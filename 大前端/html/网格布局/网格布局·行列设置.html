@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网格布局·行列设置</title>
+    <style>
+
+        .item {
+            font-size: 50px;
+            color: white;
+            text-align: center;
+            margin: auto;
+        }
+
+        .box1 {
+            width: 600px;
+            height: 600px;
+            background-color: red;
+            display: grid;
+
+            /* 方式一、通过设置固定值，设置行列
+             */
+            /* grid-template-rows: 200px 200px 200px;
+            grid-template-columns: 200px 200px 200px; */
+
+            /* 方式二、通过设置百分比，设置行列
+             */
+            /* grid-template-rows: 33% 33% 33%;
+            grid-template-columns: 33% 33% 33%; */
+
+            /* 方式三、repeat() 函数：重复 3 次 33.3%
+             */
+            /* grid-template-rows: repeat(3, 33.3%);
+            grid-template-columns: repeat(3, 33.3%); */
+
+              /* 方式四、repeat() 函数：使用 33.3% 自动填充
+             */
+            /* grid-template-rows: repeat(auto-fill, 150px);
+            grid-template-columns: repeat(auto-fill, 20%); */
+
+            /* 方式五、使用 fr 自动填充剩余空间
+             */
+            /* grid-template-rows: 100px 1fr 300px;
+            grid-template-columns: 3fr 1fr 2fr; */
+
+            /* 方式六：使用 auto 自动填充剩余空间
+             */
+            /* grid-template-rows: 100px auto 200px;
+            grid-template-columns: 100px auto auto; */
+
+            /* 方式七、minmax() 设置最大与最小值
+             *        最大值可能导致最终超出盒子
+             *        最小值肯能导致盒子不被占满
+             */
+            grid-template-rows: minmax(100px, 200px) 200px 50px;
+            grid-template-columns: 3fr 1fr 2fr;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+    </div>
+  
+</body>
+</html>
+ 

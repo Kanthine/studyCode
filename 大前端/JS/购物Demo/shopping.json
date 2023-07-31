@@ -1,0 +1,139 @@
+{
+  "users": [
+    {
+      "username": "张三",
+      "password": "123456",
+      "id": 1
+    },
+    {
+      "username": "李四",
+      "password": "123456",
+      "id": 2
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "title": "时事"
+    },
+    {
+      "id": 2,
+      "title": "经济"
+    },
+    {
+      "id": 3,
+      "title": "科学"
+    },
+    {
+      "id": 4,
+      "title": "军事"
+    },
+    {
+      "id": 5,
+      "title": "体育"
+    },
+    {
+      "id": 6,
+      "title": "理财"
+    },
+    {
+      "id": 7,
+      "title": "衣服"
+    }
+  ],
+  "goods": [
+    {
+      "id": 1,
+      "img": "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fu3.huatu.com%2Fuploads%2Fallimg%2F210827%2F660651-210RG50611B8.jpg&refer=http%3A%2F%2Fu3.huatu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1672535816&t=193f641fdaf0cc20a9c27bf21657d1d6",
+      "title": "时事·1",
+      "cPrice": 100,
+      "oPrice": 300,
+      "isHot": true,
+      "isSale": true,
+      "categoryId": 1
+    },
+    {
+      "id": 2,
+      "img": "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp2.itc.cn%2Fimages01%2F20201019%2F9e030cd069fa429f88d4b43c421b45b0.jpeg&refer=http%3A%2F%2Fp2.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1672535751&t=46cfbd3e44a5a56671cc0470b7e085a0",
+      "title": "经济·1",
+      "cPrice": 200,
+      "oPrice": 500,
+      "isHot": true,
+      "isSale": false,
+      "categoryId": 2
+    },
+    {
+      "id": 3,
+      "img": "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbkimg.cdn.bcebos.com%2Fpic%2F9f510fb30f2442a728a639a7d743ad4bd113020c&refer=http%3A%2F%2Fbkimg.cdn.bcebos.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1672535858&t=9d3bc1c58c26540c5a233770851c6ebb",
+      "title": "科学·1",
+      "cPrice": 66600,
+      "oPrice": 598200,
+      "isHot": false,
+      "isSale": true,
+      "categoryId": 3
+    },
+    {
+      "id": 4,
+      "img": "https://img1.baidu.com/it/u=930894932,2678577939&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500",
+      "title": "军事·1",
+      "cPrice": 6660,
+      "oPrice": 8200,
+      "isHot": false,
+      "isSale": false,
+      "categoryId": 4
+    },
+    {
+      "id": 5,
+      "img": "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.wetv.com.cn%2Fupload%2F20210623%2F60d2eede5cdf8.jpg&refer=http%3A%2F%2Fwww.wetv.com.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1672536015&t=976771b7c032947d7874603a6b5d2e46",
+      "title": "体育·1",
+      "cPrice": 6660,
+      "oPrice": 8200,
+      "isHot": true,
+      "isSale": true,
+      "categoryId": 5
+    },
+    {
+      "id": 6,
+      "img": "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2Fb6f193a97424f33e6fd393e7e6266033.png&refer=http%3A%2F%2Fimg-blog.csdnimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1672536063&t=b36a2fbb7039347457d069fd51ed3786",
+      "title": "理财·1",
+      "cPrice": 6660,
+      "oPrice": 8200,
+      "isHot": false,
+      "isSale": true,
+      "categoryId": 6
+    },
+    {
+      "id": 7,
+      "img": "https://img2.baidu.com/it/u=3502837490,1034196483&fm=253&fmt=auto&app=138&f=JPEG?w=350&h=449",
+      "title": "衣服·1",
+      "cPrice": 6660,
+      "oPrice": 8200,
+      "isHot": false,
+      "isSale": false,
+      "categoryId": 7
+    }
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "count": 1,
+      "goodId": 1,
+      "userId": 1,
+      "isSelect": true
+    },
+    {
+      "id": 2,
+      "count": 10,
+      "goodId": 2,
+      "userId": 2,
+      "isSelect": true
+    },
+    {
+      "goodId": "3",
+      "userId": "1",
+      "count": 12,
+      "isSelect": true,
+      "id": 3
+    }
+  ]
+}

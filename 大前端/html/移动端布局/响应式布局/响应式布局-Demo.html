@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>响应式布局·Demo</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .top>div {
+            width: 49%;
+        }
+        img {
+            width: 100%;
+        }
+
+        .top .right{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .top .right>div {
+            width: 49%;
+        }
+
+        .bottom {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .bottom>div {
+            padding: 2px;
+            width: 49%;
+            border: 2px solid blue;
+            box-sizing: border-box;
+            margin: 10px 0px;
+            box-shadow: 1px 1px 5px black;
+        }
+
+        @media screen and (max-width:768px) {
+            .top>div {
+                width: 100%;
+            }
+        }
+        @media screen and (min-width:1024px) {
+            .bottom>div {
+                width: 19%;
+            }
+        }
+        @media screen and (max-width:1024px) and (min-width:768px) {
+            .bottom>div {
+                width: 25%;
+            }
+        }
+        @media screen and (max-width:768px) and (min-width:450px) {
+            .bottom>div {
+                width: 33%;
+            }
+        }
+        @media screen and (max-width:450px) {
+            .bottom>div {
+                width: 49%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <div class="left">
+            <img src="../../img/3.png" alt="">
+        </div>
+        <div class="right">
+            <div>
+                <img src="../../img/clothes.png" alt="">
+            </div>
+            <div>
+                <img src="../../img/clothes.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <div>
+            <img src="../../img/clothes.png" alt="">
+            <p>哈不对的</p>
+        </div>
+        <div>
+            <img src="../../img/clothes.png" alt="">
+            <p>avds adsv </p>
+        </div>
+        <div>
+            <img src="../../img/clothes.png" alt="">
+            <p>是不是你发的</p>
+        </div>
+        <div>
+            <img src="../../img/clothes.png" alt="">
+            <p> 恶搞我认同吗</p>
+        </div>
+        <div>
+            <img src="../../img/clothes.png" alt="">
+            <p> 的设计开发吧的</p>
+        </div>
+        <div>
+            <img src="../../img/clothes.png" alt="">
+            <p>  的v能量爆发手机壳</p>
+        </div>
+    </div>
+</body>
+</html>

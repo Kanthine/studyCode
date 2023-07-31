@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>内置模块测试</title>
+</head>
+<body>  
+
+    
+    <script>
+
+        fetch('http://localhost:3100/home')
+        .then(res => {
+            console.log('res:', res)
+        })
+        .then(res=>{
+            console.log(res)
+        })
+    </script>
+
+
+    <!-- jsonp demo -->
+    <!-- <script>
+        var oscript = document.createElement('script')
+        // oscript.src = 'http://localhost:3100/api/user?callback=getInfo'
+        oscript.src = 'http://localhost:3100/home'
+        // oscript.src = 'http://localhost:3100/json'
+        document.body.appendChild(oscript)
+
+        function getInfo(info) {
+            console.log('info:', info)
+        }
+    </script> -->
+
+</body>
+</html>
+ 

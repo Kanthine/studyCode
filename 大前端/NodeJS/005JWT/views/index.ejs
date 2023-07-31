@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <style>
+      td img {
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>MongDB 数据库</h1>
+    <div>
+      <table border="1">
+        <thead>
+          <tr>
+            <td>id</td>
+            <td>用户名</td>
+            <td>年龄</td>
+            <td>头像</td>
+            <td><button id="updateBtn1">修改</button></td>
+            <td><button id="deleteBtn1">删除</button></td>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <hr>
+    <div>
+      <div>用户名：<input id="username"/></div>
+      <div>密 码：<input type="password" id="password"/></div>
+      <div>年 龄：<input type="number" id="age"/></div>
+      <div>头像：<input type="file" id="avatar"/></div> 
+      <div><button id="localAddBtn">增</button></div>
+    </div>
+    <hr>
+    <div><button id="logoutBtn">退出登录</button></div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script>
+      // 添加一个请求拦截器
+      axios.interceptors.request.use(function (config) {
+        // 请求发出前、第一个调用的方法
+        const token = localStorage.getItem('token')
+        console.log('getToken', token)
+        token && (config.headers.Authorization = `Bearer ${token}`)
+        return config;
+      }, function (error) {
+        return Promise.reject(error);
+      });
+
+      // 添加一个响应拦截器
+      axios.interceptors.response.use(function (response) {
+        // 请求成功后、第一个调用的方法
+        const {authorization} = response.headers;
+        authorization && localStorage.setItem('token', authorization)
+        return response;
+      }, function (error) {
+        if (error.errCode == 401) {
+          localStorage.removeItem('token')
+          location.href = '/login' 
+        }
+        console.log('error 1:' , error)
+        return Promise.reject(error);
+      });
+    </script>
+
+    <script>
+
+      // 查询数据并渲染
+      function findAll() {
+        axios.get('/users').then(function (response) {
+
+          let tbody = document.querySelector('tbody')
+          tbody.innerHTML = response.data.message.map(item=>`
+            <tr>
+              <td>${item._id}</td>
+              <td>${item.username}</td>
+              <td>${item.age}</td>
+              <td><img src='${item.avatar}'/></td>
+              <td><button class="updateBtn" localID=${item._id}>修改</button></td>
+              <td><button class="deleteBtn" localID=${item._id}>删除</button></td>
+            </tr>
+          `).join("")
+          console.log('response users', response);
+        })
+        .catch(function (error) {
+          console.log('users error', error);
+        })
+      }
+      findAll()
+
+      let username = document.querySelector('#username')
+      let password = document.querySelector('#password')
+      let age = document.querySelector('#age')
+      let avatar = document.querySelector('#avatar')
+      let addBtn = document.querySelector('#localAddBtn')
+
+      addBtn.onclick = ()=>{
+        console.log(username.value, password.value, age.value, avatar.value)
+        const formData = new FormData()
+        formData.append('username', username.value)
+        formData.append('password', password.value)
+        formData.append('age', age.value)
+        formData.append('avatar', avatar.files[0])
+        axios.post('/users', formData, {
+          headers:{
+            'Content-Type':'multipart/form-data'
+          }
+        }).then(function (response) {
+          findAll()
+          console.log('users add:', response)
+        }).catch(function (error) {
+          console.log('users add error:', error);
+        });
+      }
+
+      let deleteBtn = document.querySelector('#deleteBtn1')
+      deleteBtn.onclick = ()=>{
+        axios.delete('/users/63fc0b43b6afa8093d69f820').then(function (response) {
+          findAll()
+          console.log('delete response:', response);
+        }).catch(function (error) {
+          console.log('delete error:', error);
+        })
+      }
+
+      let updateBtn = document.querySelector('#updateBtn1')
+      updateBtn.onclick = ()=>{
+        axios.put('/users/63f421bc7873f8cf910cdf24', {
+          username: username.value,
+          password: password.value,
+          age: age.value
+        }).then(function (response) {
+          findAll()
+          console.log('users update:', response)
+        }).catch(function (error) {
+          console.log('users update error:', error);
+        });
+      }
+
+      let logoutBtn = document.querySelector('#logoutBtn')
+      logoutBtn.onclick = ()=>{
+        console.log('logoutBtn')
+        axios.get('/users/logout').then(function (response) {
+          if (response.data.code == 0) {
+            // 退出成功
+            localStorage.removeItem('token')
+            location.href = '/login'
+          } else {
+            // 退出失败
+            alert('退出登录失败')
+          }
+          console.log('response logout', response);
+        }).catch(function (error) {
+          console.log('logout error', error);
+        })
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+#import <Foundation/Foundation.h>
+
+@interface AAPLImage : NSObject
+
+// Initialize this image by loading a *very* simple TGA file.
+// The sample can't load compressed, paletted, or color mapped images.
+-(nullable instancetype) initWithTGAFileAtLocation:(nonnull NSURL *)location;
+
+// Width of image in pixels.
+@property (nonatomic, readonly) NSUInteger      width;
+
+// Height of image in pixels.
+@property (nonatomic, readonly) NSUInteger      height;
+
+// Image data is in 32-bits-per-pixel (bpp) BGRA form (which is equivalent to MTLPixelFormatBGRA8Unorm).
+@property (nonatomic, readonly, nonnull) NSData *data;
+
+@end

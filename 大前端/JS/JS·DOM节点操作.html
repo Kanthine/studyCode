@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS·节点操作</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        .box {
+            height: 100px;
+            padding: 10px;
+            border: 5px solid red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box"></div>
+    <button id="creatElement">创造</button>
+    <button id="deleteElement">删除</button>
+    <button id="replaceElement">替换</button>
+    <button id="cloneElement">克隆</button>
+    <button id="sizeElement">尺寸</button>
+    <script>
+        creatElement.onclick = function() {
+            let box = document.querySelector('.box')
+
+            /// 添加方法一：
+            let p2 = document.createElement('p')
+            p2.innerText = '构造一个 p2 标签'
+            box.appendChild(p2)  /// 将子节点放在父节点内部、并放在最后一个位置
+            
+            /// 添加方法二：
+            let p1 = document.createElement('p')
+            p1.innerText = '构造一个 p1 标签'
+            box.insertBefore(p1, p2) /// 将 p1 节点插入到父节点，并且排列到 p2 节点之前
+        }
+        deleteElement.onclick = function (){
+            let box = document.querySelector('.box')
+
+            /// 删除方法一：
+            let p = document.querySelector('p')
+            box.removeChild(p)   /// 从父节点中删除子节点
+
+            /// 删除方法二：
+            let p2 = document.querySelector('p')
+            p2.remove() /// 子节点自己删除
+        }
+        replaceElement.onclick = function (){
+            let box = document.querySelector('.box')
+
+            let p3 = document.createElement('p')
+            p3.innerText = '构造一个 p3 标签'
+            
+            let p1 = document.querySelector('p')
+            /// 使用 p3 替换 p1 节点
+            box.replaceChild(p3, p1)
+        }
+        cloneElement.onclick = function(){
+            let box = document.querySelector('.box')            
+            /// 入参：是否克隆后代节点
+            let b1 = box.cloneNode(false)
+            console.log(b1)
+            let b2 = box.cloneNode(true)
+            console.log(b2)
+        }
+        sizeElement.onclick = function() {
+            let box = document.querySelector('.box')     
+            /// 获取元素的宽高；内容 + paddding
+            console.log(box.clientWidth, box.clientHeight)
+            /// 获取元素的宽高：内容 + paddding + border
+            console.log(box.offsetWidth, box.offsetHeight)
+        }
+    </script>    
+</body>
+</html>
+ 

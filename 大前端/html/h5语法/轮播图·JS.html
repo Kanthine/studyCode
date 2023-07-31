@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图·JS实现</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .swiper-container {
+            width: 300px;
+            height: 300px;
+            margin: 20px auto;
+            border: 1px solid red;
+            overflow: hidden;
+        } 
+        .swiper-wrapper {
+            display: flex;
+            width: 1500px;
+            transition: all 0.2s linear;
+            transform: translateX(0px);
+        }
+
+        .swiper-slide {
+            width: 300px;
+            padding: 0px 10px;
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 100%;
+        }
+        p {
+            width: 100%;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="../img/3.png" alt="">
+                <p>第一张图片</p>
+            </div>
+            <div class="swiper-slide">
+                <img src="../img/3.png" alt="">
+                <p>第二张图片</p>
+            </div>
+            <div class="swiper-slide">
+                <img src="../img/3.png" alt="">
+                <p>第三张图片</p>
+            </div>
+            <div class="swiper-slide">
+                <img src="../img/3.png" alt="">
+                <p>第四张图片</p>
+            </div>
+            <!-- 最后一份与第一份相同 -->
+            <div class="swiper-slide">
+                <img src="../img/3.png" alt="">
+                <p>第一张图片</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let src = document.querySelector('.swiper-wrapper');
+        let index = 0;
+        setInterval(() => {
+            index++;
+            if(index > 3) {
+                index = 0;
+            }
+            let offetX = -300 * index;
+            src.style.transform = `translateX(${offetX}px)`;
+        }, 1000);
+    </script>
+</body>
+</html>
+ 
